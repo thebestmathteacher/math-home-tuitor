@@ -20,7 +20,7 @@
       --accent: #0ea5e9;        
       --whatsapp: #25D366;
       --whatsapp-dark: #1da851;
-      --bg: #f1f5f9;
+      --bg: #f8fafc;
       --text-main: #334155;
       --radius: 12px;
       --shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
@@ -35,254 +35,328 @@
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
-      padding-bottom: 80px; /* For mobile sticky bar */
+      padding-bottom: 80px;
     }
 
     /* --- Top Info Bar --- */
-    .top-bar {
-      background: var(--secondary);
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 0.95rem;
-    }
+    .top-bar { background: var(--secondary); color: white; text-align: center; padding: 10px; font-size: 0.95rem; }
     .top-bar a { color: #bfdbfe; text-decoration: none; font-weight: bold; margin-left: 5px; }
 
-    /* --- Floating WhatsApp (Desktop Only) --- */
+    /* --- Floating Buttons --- */
     .floating-wa {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--whatsapp);
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-      z-index: 1000;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      animation: pulse-green 2s infinite;
+      position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white;
+      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; text-decoration: none;
+      transition: all 0.3s ease; animation: pulse-green 2s infinite;
     }
     .floating-wa:hover { transform: scale(1.1); color: white; }
 
-    /* --- Mobile Sticky Bottom Bar --- */
     .mobile-sticky-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: white;
-      box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-      z-index: 9999;
-      display: flex;
-      padding: 12px 15px;
-      gap: 15px;
-      border-top: 1px solid #e2e8f0;
+      position: fixed; bottom: 0; left: 0; width: 100%; background: white;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 9999; display: flex; padding: 12px 15px; gap: 15px; border-top: 1px solid #e2e8f0;
     }
-    
     .sticky-btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: 0.2s;
-      color: white !important;
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px;
+      border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; color: white !important;
     }
-    
     .s-call { background: var(--primary); }
     .s-wa { background: var(--whatsapp); }
-    
-    .s-call:active, .s-wa:active { transform: scale(0.96); opacity: 0.9; }
 
-    /* Media Queries */
-    @media (min-width: 769px) {
-      .mobile-sticky-bar { display: none; }
-      body { padding-bottom: 0; }
-    }
-    @media (max-width: 768px) {
-      .floating-wa { display: none; }
-    }
-
+    @media (min-width: 769px) { .mobile-sticky-bar { display: none; } body { padding-bottom: 0; } }
+    @media (max-width: 768px) { .floating-wa { display: none; } }
     @keyframes pulse-green {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
       70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
-    /* --- Standard Layout --- */
+    /* --- Layout Container --- */
     .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
     /* Hero Section */
     .hero-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      margin-top: 20px;
-      margin-bottom: 40px;
-      gap: 40px;
+      display: flex; align-items: center; justify-content: space-between; background: white;
+      padding: 40px; border-radius: 20px; box-shadow: var(--shadow); margin-top: 20px; margin-bottom: 40px; gap: 40px;
     }
-
     .hero-img-box { flex: 0 0 300px; position: relative; }
-    
-    .profile-img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 8px solid #eff6ff;
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
-    }
-
+    .profile-img { width: 300px; height: 300px; object-fit: cover; border-radius: 20px; border: 8px solid #eff6ff; box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2); }
     .exp-badge {
-      position: absolute;
-      bottom: -15px;
-      right: -15px;
-      background: var(--secondary);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 12px;
-      border: 3px solid white;
-      text-align: center;
+      position: absolute; bottom: -15px; right: -15px; background: var(--secondary); color: white;
+      padding: 10px 20px; border-radius: 12px; border: 3px solid white; text-align: center;
     }
-
     .hero-content { flex: 1; }
-
     h1 { font-size: 2.5rem; line-height: 1.2; color: var(--secondary); margin-bottom: 15px; }
     .bio { font-size: 1.1rem; color: #64748b; margin-bottom: 25px; text-align: justify; }
-
-    /* --- Hero Buttons --- */
+    
     .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
-
-    .btn {
-      padding: 12px 30px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      color: white !important;
+    .btn { padding: 12px 30px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; color: white !important; cursor: pointer; }
+    .btn-call { background: var(--primary); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
+    .btn-call:hover { background: var(--primary-dark); transform: translateY(-3px); }
+    .btn-whatsapp { background: var(--whatsapp); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+    .btn-whatsapp:hover { background: var(--whatsapp-dark); transform: translateY(-3px); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary) !important; }
+    .btn-outline:hover { background: #eff6ff; }
+    /* বাটনগুলো এক লাইনে রাখার জন্য গ্যাপ কমানো হয়েছে */
+    .hero-btns { 
+      display: flex; 
+      gap: 10px; 
+      flex-wrap: wrap; 
     }
 
-    .btn-call {
-      background: var(--primary);
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    /* বাটনের সাইজ একটু কমপ্যাক্ট করা হয়েছে যাতে ৩টি পাশাপাশি ধরে */
+    .btn { 
+      padding: 12px 15px;  /* আগে ছিল 30px, এখন কমানো হলো */
+      font-size: 0.95rem;  /* ফন্ট সাইজ সামান্য কমানো হলো */
+      border-radius: 8px; 
+      font-weight: 600; 
+      text-decoration: none; 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      transition: all 0.3s ease; 
+      color: white !important; 
+      cursor: pointer; 
+      white-space: nowrap; /* লেখা যাতে ভেঙে দুই লাইন না হয় */
     }
-    .btn-call:hover {
-      background: var(--primary-dark);
+    /* See More বাটনের লেখা ঠিক করার জন্য */
+    .btn-outline { 
+      color: var(--primary) !important; 
+      background: transparent !important;
+      border: 2px solid var(--primary) !important;
+    }
+    
+    .btn-outline:hover { 
+      background: #eff6ff !important; 
+      color: var(--primary) !important; /* মাউস নিলেও নীল থাকবে */
+    }
+    
+    /* এই কোডটি <style> এর ভেতরে .btn-quiz এর জায়গায় বসান */
+    .btn-quiz {
+      background: #7c3aed; /* সুন্দর একটি বেগুনী কালার */
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3); /* বাটনের নিচে হালকা আভা */
+    }
+    /* মাউস নিলে যা হবে */
+    .btn-quiz:hover {
+      background: #6d28d9;
       transform: translateY(-3px);
     }
+    
+    /* বাটনগুলো এক লাইনে রাখার জন্য কন্টেইনার */
+    .quiz-btn-row {
+      display: flex;
+      gap: 15px;       /* মাঝখানে ফাঁকা */
+      margin-top: 20px;
+      flex-wrap: wrap; /* মোবাইলে জায়গা না হলে সুন্দরভাবে নিচে নামবে */
+    }
 
-    .btn-whatsapp {
-      background: var(--whatsapp);
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    /* বাতিল বাটনের লাল রং */
+    .btn-cancel {
+      background: #ef4444 !important; 
+      border: 1px solid #ef4444;
     }
-    .btn-whatsapp:hover {
-      background: var(--whatsapp-dark);
-      transform: translateY(-3px);
+    .btn-cancel:hover {
+      background: #dc2626 !important;
     }
 
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .stat-card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      border-bottom: 4px solid var(--accent);
-    }
+
+    /* Stats */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+    .stat-card { background: white; padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-bottom: 4px solid var(--accent); }
     .stat-num { font-size: 2rem; font-weight: bold; color: var(--secondary); }
 
-    /* Features */
     .section-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: var(--secondary); }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .feature-box {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-    .feature-box:hover { transform: translateY(-5px); }
-    .f-icon {
-      width: 50px; height: 50px; background: #eff6ff; color: var(--primary);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 15px;
+    
+    /* --- NEW: QUIZ SECTION STYLES --- */
+    /* নতুন নীল রঙের কুইজ ডিজাইন */
+    .quiz-section { 
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); /* হালকা নীল গ্র্যাডিয়েন্ট */
+      border-radius: 20px; 
+      padding: 30px; 
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.15); /* সুন্দর নীলচে শ্যাডো */
+      margin-bottom: 50px; 
+      border: 2px solid #bae6fd; /* হালকা বর্ডার */
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Contact Form */
+    /* ব্যাকগ্রাউন্ডে হালকা একটু বলের মতো ডিজাইন (এটি .quiz-section এর নিচেই বসান) */
+    .quiz-section::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 150px; height: 150px;
+      background: rgba(14, 165, 233, 0.05);
+      border-radius: 50%;
+      transform: translate(30%, -30%);
+    }
+    .quiz-intro { text-align: center; max-width: 700px; margin: 0 auto 30px; color: #475569; }
+    .class-selector { width: 100%; max-width: 300px; padding: 12px; font-size: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; display: block; margin: 0 auto 30px; text-align: center; background: #f8fafc; font-family: inherit; }
+    .quiz-container { display: none; }
+    .question-box { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #cbd5e1; }
+    .question-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary); }
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .option-label { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 15px; border-radius: 8px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+    .option-label:hover { background: #eff6ff; border-color: var(--primary); }
+    .option-label input { accent-color: var(--primary); transform: scale(1.2); }
+    
+    /* Result Box & Ad */
+    #quiz-result-box { display: none; text-align: center; padding: 40px; background: #f0fdf4; border-radius: 15px; border: 2px solid #bbf7d0; animation: fadeIn 0.5s; }
+    .score-circle { width: 120px; height: 120px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2.5rem; font-weight: bold; color: var(--secondary); border: 6px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .result-msg { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+    .ad-box { background: white; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid; text-align: left; }
+    .ad-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+    
+    /* Color Variants for Results */
+    .res-bad { border-color: #fca5a5 !important; background: #fef2f2 !important; }
+    .res-avg { border-color: #fdba74 !important; background: #fff7ed !important; }
+    .res-good { border-color: #86efac !important; background: #f0fdf4 !important; }
+    .txt-bad { color: #dc2626; } .txt-avg { color: #d97706; } .txt-good { color: #166534; }
+
+    @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } 
+  }
+    /* end quiz */
+    /* Process Steps */
+    .process-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
+    .process-steps { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; position: relative; margin-top: 20px; }
+    .step { flex: 1; min-width: 140px; text-align: center; }
+    .step-icon { width: 60px; height: 60px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 15px; border: 2px solid var(--primary); }
+    .step h4 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 5px; }
+    .arrow-icon { color: #cbd5e1; font-size: 1.5rem; }
+
+    /* --- SLIDER / CAROUSEL STYLES --- */
+    .story-section-wrap { position: relative; margin-bottom: 50px; overflow: hidden; padding: 10px; }
+    .slider-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 20px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .slider-container::-webkit-scrollbar { display: none; }
+    
+    .story-card {
+      min-width: 320px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .story-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+    .story-header { background: #f8fafc; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+    .story-tag { font-size: 0.8rem; padding: 5px 12px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+    .story-header h3 { font-size: 1.2rem; color: var(--secondary); margin: 0; }
+    .story-body { padding: 20px; font-size: 0.95rem; color: #475569; }
+    .story-example { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    
+    .slider-btn {
+      position: absolute; top: 55%; transform: translateY(-50%);
+      width: 45px; height: 45px; background: var(--secondary); color: white;
+      border-radius: 50%; border: none; cursor: pointer; z-index: 10;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3); opacity: 0.8; transition: 0.3s;
+    }
+    .slider-btn:hover { opacity: 1; background: var(--primary); }
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
+
+    /* Tag Colors */
+    .tag-alg { background: #dbeafe; color: #1e40af; } 
+    .tag-ari { background: #dcfce7; color: #166534; }
+    .tag-geo { background: #fef9c3; color: #854d0e; }
+
+    /* Special Services */
+    .services-wrap { background: var(--secondary); color: white; padding: 40px; border-radius: 20px; margin-bottom: 40px; }
+    .services-wrap h2 { color: white; text-align: center; margin-bottom: 30px; font-size: 1.8rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .service-card { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+    .service-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+    .service-card i { font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; }
+    .service-card h3 { font-size: 1.1rem; margin-bottom: 5px; font-weight: 600; }
+
+    /* Testimonials */
+    .testimonials { margin-bottom: 40px; }
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .review-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-left: 5px solid var(--primary); }
+    .review-text { font-style: italic; color: #475569; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.7; }
+    .reviewer { font-weight: bold; color: var(--secondary); display: flex; align-items: center; gap: 10px; justify-content: space-between; margin-top: 10px;}
+    .stars { color: #f59e0b; font-size: 0.8rem; }
+    #more-reviews { display: none; margin-top: 20px; }
+
+    /* --- REVIEW SUBMISSION FORM STYLES --- */
+    .review-submit-box {
+      background: #fff; border: 2px dashed #cbd5e1; border-radius: 15px; padding: 30px; 
+      margin-top: 40px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;
+    }
+    .review-submit-box h3 { margin-bottom: 15px; color: var(--secondary); }
+    .star-rating-input {
+      display: flex; justify-content: center; gap: 10px; font-size: 2rem; color: #cbd5e1; cursor: pointer; margin-bottom: 20px;
+    }
+    .star-rating-input i.active { color: #f59e0b; }
+    .review-input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; }
+
+    /* FAQ & Form */
+    .faq-section { margin-bottom: 40px; }
+    .faq-item { background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .faq-item summary { padding: 15px 20px; cursor: pointer; font-weight: 600; color: var(--secondary); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.2rem; font-weight: bold; }
+    .faq-item[open] summary::after { content: '-'; }
+    .faq-item p { padding: 0 20px 20px; color: #64748b; font-size: 0.95rem; border-top: 1px solid #f1f5f9; margin-top: 10px; padding-top: 10px; }
+
     .contact-section { background: white; padding: 40px; border-radius: 20px; box-shadow: var(--shadow); }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    input, select, textarea {
-      width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px;
-      background: #f8fafc; font-family: inherit; margin-bottom: 15px;
-    }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc; font-family: inherit; margin-bottom: 15px; }
     .full-width { grid-column: span 2; }
-    
-    button[type="submit"] {
-      background: var(--secondary); color: white; width: 100%; padding: 15px;
-      border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: 600;
-    }
+    button[type="submit"] { background: var(--secondary); color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: 600; }
 
-    /* Footer */
     footer { text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.9rem; }
 
-    /* Mobile Responsive */
     @media (max-width: 768px) {
       .hero-section { flex-direction: column; text-align: center; padding: 30px 20px; }
       .hero-img-box { margin-bottom: 10px; }
-      .hero-btns { justify-content: center; width: 100%; }
-      .btn { width: 100%; justify-content: center; } 
-      .stats-grid { grid-template-columns: 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
+      .hero-btns, .btn { width: 100%; justify-content: center; } 
+      .stats-grid, .form-grid { grid-template-columns: 1fr; }
       .full-width { grid-column: span 1; }
       .exp-badge { right: 50%; transform: translateX(50%); bottom: -25px; }
+      .process-steps { flex-direction: column; }
+      .arrow-icon { transform: rotate(90deg); margin: 10px 0; }
+      .slider-btn { width: 35px; height: 35px; font-size: 1rem; }
+      .prev-btn { left: 0; } .next-btn { right: 0; }
+    }
+    /* কুইজের বাটনগুলো পাশাপাশি এবং সমান সাইজের করার জন্য */
+    .quiz-btn-row {
+      display: flex;
+      gap: 15px;       /* মাঝখানে ফাঁকা */
+      margin-top: 20px;
+    }
+
+    /* আগের 100% উইথ বাতিল করে অটো করা */
+    .quiz-btn-row button[type="submit"], 
+    .quiz-btn-row .btn-cancel {
+      width: auto !important; 
+      flex: 1;        /* বাটন দুটি সমান সাইজের হবে */
+      margin: 0;      /* বাড়তি মার্জিন সরানো */
+      justify-content: center; /* লেখা মাঝখানে রাখা */
     }
   </style>
 </head>
 <body>
 
   <div class="top-bar">
-    <i class="fa-solid fa-phone"></i> টিউটর প্রয়োজন? কল করুন: <a href="tel:+8801639498196">01639498196</a>
+    <i class="fa-solid fa-phone"></i> টিউটর প্রয়োজন? কল করুন: <a href="tel:+8801800000000">01800000000</a>
   </div>
 
   <div class="mobile-sticky-bar">
-    <a href="tel:+8801639498196" class="sticky-btn s-call">
-      <i class="fa-solid fa-phone"></i> কল করুন
-    </a>
-    <a href="https://wa.me/8801639498196?text=আসসালামু+আলাইকুম,+আমি+গণিত+টিউশন+সম্পর্কে+জানতে+চাই।" class="sticky-btn s-wa">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </a>
+    <a href="tel:+8801800000000" class="sticky-btn s-call"><i class="fa-solid fa-phone"></i> কল করুন</a>
+    <a href="https://wa.me/8801800000000?text=আসসালামু+আলাইকুম,+আমি+গণিত+টিউশন+সম্পর্কে+জানতে+চাই।" class="sticky-btn s-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
   </div>
 
-  <a href="https://wa.me/8801639498196?text=আসসালামু+আলাইকুম,+আমি+গণিত+টিউশন+সম্পর্কে+জানতে+চাই।" class="floating-wa" target="_blank">
+  <a href="https://wa.me/8801800000000?text=আসসালামু+আলাইকুম,+আমি+গণিত+টিউশন+সম্পর্কে+জানতে+চাই।" class="floating-wa" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -305,15 +379,20 @@
         </div>
         <h1>মোঃ সোলায়মান হোসেন আলম</h1>
         <p class="bio">
-          "গণিত কোনো ভয়ের বিষয় নয়, এটি একটি ভাষা।" আমি গত ৭ বছর ধরে এই ভাষাই শিক্ষার্থীদের সহজ করে শিখিয়ে আসছি। আমার লক্ষ্য ছাত্রদের শুধু বইয়ের অংক মুখস্থ করানো নয়, বরং গণিতের বেসিক এমনভাবে তৈরি করা যেন তারা সারাজীবন মনে রাখে।
+          "গণিত কোনো ভয়ের বিষয় নয়, এটি একটি ভাষা।" আমি গত ৭ বছর ধরে এই ভাষাই শিক্ষার্থীদের সহজ করে শিখিয়ে আসছি। আমার লক্ষ্য ছাত্রদের শুধু বইয়ের অংক মুখস্থ করানো নয়, বরং গণিতের বেসিক এমনভাবে তৈরি করা যেন তারা সারাজীবন মনে রাখে।
         </p>
         
         <div class="hero-btns">
-          <a href="tel:+8801639498196" class="btn btn-call">
+          <a href="tel:+8801800000000" class="btn btn-call">
             <i class="fa-solid fa-phone"></i> সরাসরি কল করুন
           </a>
-          <a href="https://wa.me/8801639498196?text=আসসালামু+আলাইকুম,+আমি+গণিত+টিউশন+সম্পর্কে+জানতে+চাই।" class="btn btn-whatsapp" target="_blank">
+
+          <a href="https://wa.me/8801800000000" class="btn btn-whatsapp" target="_blank">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp করুন
+          </a>
+          
+          <a href="#quiz-section" class="btn btn-quiz">
+            <i class="fa-solid fa-clipboard-question"></i> সন্তানের বেসিক টেস্ট করুন
           </a>
         </div>
       </div>
@@ -321,8 +400,8 @@
 
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-num">১০০+</div>
-        <div style="color:#64748b">শিক্ষার্থী পড়িয়েছি</div>
+        <div class="stat-num">৫০০+</div>
+        <div style="color:#64748b">শিক্ষার্থী পড়িয়েছি</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">৯৮%</div>
@@ -334,48 +413,316 @@
       </div>
     </div>
 
-    <h2 class="section-title">কেন আমাকে বেছে নিবেন?</h2>
-    <div class="features-grid">
-      <div class="feature-box">
-        <div class="f-icon"><i class="fa-solid fa-brain"></i></div>
-        <h3>বেসিক ডেভেলপমেন্ট</h3>
-        <p style="color:#64748b">শুধুমাত্র সিলেবাস শেষ করা নয়, প্রতিটি অধ্যায়ের বেসিক কনসেপ্ট ক্লিয়ার করার প্রতি বিশেষ গুরুত্ব দেওয়া হয়।</p>
+    <div class="process-container">
+      <h2 class="section-title">আমার পড়ানোর পদ্ধতি</h2>
+      <p style="text-align:center; color:#64748b; margin-bottom:20px;">গণিতকে বোঝার বিষয় বানাই, মুখস্থের নয়।</p>
+      
+      <div class="process-steps">
+        <div class="step"><div class="step-icon"><i class="fa-regular fa-lightbulb"></i></div><h4>ধারণা</h4></div>
+        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step"><div class="step-icon"><i class="fa-solid fa-chalkboard-user"></i></div><h4>উদাহরণ</h4></div>
+        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step"><div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div><h4>অনুশীলন</h4></div>
+        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step"><div class="step-icon"><i class="fa-solid fa-rotate"></i></div><h4>রিভিশন</h4></div>
+        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step"><div class="step-icon"><i class="fa-solid fa-trophy"></i></div><h4>পরীক্ষা</h4></div>
       </div>
-      <div class="feature-box">
-        <div class="f-icon"><i class="fa-regular fa-face-smile"></i></div>
-        <h3>ভয়হীন শিক্ষা</h3>
-        <p style="color:#64748b">কঠোর শাসন নয়, বরং বন্ধুত্বপূর্ণ আচরণের মাধ্যমে গণিতের ভীতি দূর করে আত্মবিশ্বাস তৈরি করা হয়।</p>
+    </div>
+
+    <div class="story-section-wrap">
+      <h2 class="section-title"><i class="fa-solid fa-book-open-reader"></i> গল্পে গল্পে গণিত (ডেমো)</h2>
+      <p style="text-align:center; color:#64748b; margin-bottom:30px;">আমি যেভাবে জটিল বিষয়গুলো সহজ গল্পের মাধ্যমে বোঝাই:</p>
+      
+      <button class="slider-btn prev-btn" onclick="slideLeft()"><i class="fa-solid fa-angle-left"></i></button>
+      <button class="slider-btn next-btn" onclick="slideRight()"><i class="fa-solid fa-angle-right"></i></button>
+
+      <div class="slider-container" id="slider">
+        
+        <div class="story-card">
+          <div class="story-header"><span class="story-tag tag-alg">বীজগণিত</span><h3>রহস্যময় বাক্স 'X'</h3></div>
+          <div class="story-body">
+            <p><strong>বোঝানোর কৌশল:</strong> $x$ কোনো ভয়ের সংখ্যা নয়, এটি একটি "জাদুর বাক্স"। আমরা জানি না এর ভেতরে কয়টি চকলেট আছে।</p>
+            <div class="story-example">
+              <p>প্রশ্ন: $2x + 5 = 15$</p>
+              <p>গল্প: ২টা বাক্স আর ৫টা খোলা চকলেট মিলে ১৫টা। ৫টা সরিয়ে নিলে, ২টা বাক্সে ১০টা থাকে। তাহলে ১টা বাক্সে কয়টা? ৫টা!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-header"><span class="story-tag tag-ari">বাস্তব সংখ্যা</span><h3>ভূতের বাড়ির সিঁড়ি (- মাইনাস)</h3></div>
+          <div class="story-body">
+            <p><strong>বোঝানোর কৌশল:</strong> সংখ্যা রেখা হলো একটা বহুতল ভবন। শূন্য (0) হলো নিচতলা বা গ্রাউন্ড ফ্লোর।</p>
+            <div class="story-example">
+              <p>প্রশ্ন: $-3 + 5 = ?$</p>
+              <p>গল্প: তুমি ছিলে মাটির ৩ তলা নিচে বেইজমেন্টে (-3)। সেখান থেকে লিফটে করে ৫ তলা উপরে উঠলে (+5)। তাহলে তুমি এখন কোথায়? উত্তর: ২য় তলায় (+2)।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-header"><span class="story-tag tag-ari">ভগ্নাংশ</span><h3>পিজ্জা খাওয়ার লড়াই</h3></div>
+          <div class="story-body">
+            <p><strong>বোঝানোর কৌশল:</strong> ভগ্নাংশ যোগ করা মানে পিজ্জার টুকরো মেলানো।</p>
+            <div class="story-example">
+              <p>প্রশ্ন: $\frac{1}{2} + \frac{1}{4} = ?$</p>
+              <p>গল্প: তোমার কাছে অর্ধেক পিজ্জা আছে ($\frac{1}{2}$), আর বন্ধুর কাছে চার ভাগের এক ভাগ ($\frac{1}{4}$)। অর্ধেকটাকে যদি মাঝখানে কাটো, তবে ২টা ছোট টুকরো ($\frac{2}{4}$) হয়। তাহলে মোট ৩টা ছোট টুকরো ($\frac{3}{4}$)।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-header"><span class="story-tag tag-ari">ল.সা.গু</span><h3>দুই বন্ধুর দৌড় প্রতিযোগিতা</h3></div>
+          <div class="story-body">
+            <p><strong>বোঝানোর কৌশল:</strong> ল.সা.গু মানে "কখন আবার দেখা হবে?"</p>
+            <div class="story-example">
+              <p>প্রশ্ন: ৪ ও ৬ এর ল.সা.গু কত?</p>
+              <p>গল্প: ১ম বন্ধু ৪ মিনিট পরপর ল্যাপ শেষ করে, ২য় বন্ধু ৬ মিনিট পরপর। তারা ১২ মিনিট পর এসে আবার স্টার্টিং পয়েন্টে একসাথে হবে। তাই ল.সা.গু ১২।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-header"><span class="story-tag tag-ari">শতকরা</span><h3>ঈদ শপিং এর ডিসকাউন্ট</h3></div>
+          <div class="story-body">
+            <p><strong>বোঝানোর কৌশল:</strong> পার্সেন্ট (%) মানে প্রতি ১০০ টাকায় কত ছাড়?</p>
+            <div class="story-example">
+              <p>প্রশ্ন: ৫০০ টাকার পাঞ্জাবিতে ২০% ছাড়</p>
+              <p>গল্প: ১০০ টাকায় ২০ টাকা মাফ। তাহলে ৫০০ টাকায় ৫টা ১০০ টাকার নোট আছে। অর্থাৎ ৫ বার ২০ টাকা মাফ। ৫ x ২০ = ১০০ টাকা কম। দাম ৪০০ টাকা!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-header"><span class="story-tag tag-geo">জ্যামিতি</span><h3>দেয়াল ও মই (পিথাগোরাস)</h3></div>
+          <div class="story-body">
+            <p><strong>বোঝানোর কৌশল:</strong> অতিভুজ মুখস্থ না করে দেয়াল আর মই দিয়ে চিন্তা করি।</p>
+            <div class="story-example">
+              <p>বিষয়: $a^2 + b^2 = c^2$</p>
+              <p>গল্প: দেয়াল সোজা (লম্ব), মাটি সমতল (ভূমি)। মইটা বাঁকা করে রাখলে সেটাই অতিভুজ। মই যত বড় হবে, দেয়ালের তত উঁচুতে উঠবে। এটাই পিথাগোরাসের সূত্র।</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="feature-box">
-        <div class="f-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>প্রোগ্রেস ট্র্যাকিং</h3>
-        <p style="color:#64748b">সাপ্তাহিক এবং মাসিক পরীক্ষার মাধ্যমে শিক্ষার্থীর দুর্বলতা চিহ্নিত করে তা সমাধানের ব্যবস্থা।</p>
+    </div>
+
+    <div style="margin-bottom: 50px;">
+      <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> আপনার সন্তানের জন্য সঠিক ব্যাচ</h2>
+      <p style="text-align: center; color: #64748b; margin-bottom: 30px;">শিক্ষার্থীর মেধা ও প্রয়োজন অনুযায়ী ৩টি ভিন্ন ক্যাটাগরিতে যত্ন নেওয়া হয়</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #ef4444; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <div style="background: #fee2e2; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-heart-pulse" style="font-size: 1.5rem; color: #ef4444;"></i>
+          </div>
+          <h3 style="color: #ef4444; margin-bottom: 10px;">১. কেয়ার ব্যাচ (Weak)</h3>
+          <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 15px;">যাদের বেসিক খুবই দুর্বল এবং গণিত দেখলেই ভয় পায়।</p>
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: #ef4444; margin-right: 8px;"></i>একদম শূন্য থেকে শুরু</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: #ef4444; margin-right: 8px;"></i>বেসিক তৈরির বিশেষ ক্লাস</li>
+            <li><i class="fa-solid fa-check" style="color: #ef4444; margin-right: 8px;"></i>ভয় কাটানোর কাউন্সিলিং</li>
+          </ul>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #f59e0b; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-5px);">
+          <div style="background: #fef3c7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: #f59e0b;"></i>
+          </div>
+          <h3 style="color: #d97706; margin-bottom: 10px;">২. প্র্যাকটিস ব্যাচ (Avg)</h3>
+          <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 15px;">যারা পারে কিন্তু পরীক্ষায় ভালো নম্বর তুলতে পারে না।</p>
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: #f59e0b; margin-right: 8px;"></i>প্রচুর অনুশীলন ও এক্সাম</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: #f59e0b; margin-right: 8px;"></i>সৃজনশীল প্রশ্নের টেকনিক</li>
+            <li><i class="fa-solid fa-check" style="color: #f59e0b; margin-right: 8px;"></i>রেগুলার হোমওয়ার্ক চেকিং</li>
+          </ul>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #22c55e; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <div style="background: #dcfce7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-trophy" style="font-size: 1.5rem; color: #166534;"></i>
+          </div>
+          <h3 style="color: #166534; margin-bottom: 10px;">৩. অ্যাডভান্সড ব্যাচ (Topper)</h3>
+          <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 15px;">যারা ১০০ তে ১০০ পেতে চায় এবং অলিম্পিয়াড করতে চায়।</p>
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: #22c55e; margin-right: 8px;"></i>পাঠ্যবইয়ের বাইরেও পড়াশোনা</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: #22c55e; margin-right: 8px;"></i>কঠিন সমস্যার সমাধান</li>
+            <li><i class="fa-solid fa-check" style="color: #22c55e; margin-right: 8px;"></i>টার্গেট: বোর্ড টপার হওয়া</li>
+          </ul>
+        </div>
+
       </div>
-      <div class="feature-box">
-        <div class="f-icon"><i class="fa-solid fa-video"></i></div>
-        <h3>আধুনিক পদ্ধতি</h3>
-        <p style="color:#64748b">বাস্তব উদাহরণ এবং প্রয়োজনে ভিজ্যুয়াল কন্টেন্ট ব্যবহার করে জটিল অংক সহজভাবে বোঝানো।</p>
+    </div>
+
+    <div class="services-wrap">
+      <h2><i class="fa-solid fa-star"></i> এক্সক্লুসিভ ফিচার ও সুবিধাসমূহ</h2>
+      <div class="services-grid">
+        <div class="service-card"><i class="fa-solid fa-wrench"></i><h3>বেসিক পুনর্গঠন</h3><p style="font-size:0.9rem; opacity:0.8;">দুর্বল শিক্ষার্থীদের জন্য Weak Foundation Fixing প্রোগ্রাম।</p></div>
+        <div class="service-card"><i class="fa-solid fa-rocket"></i><h3>Crash Program</h3><p style="font-size:0.9rem; opacity:0.8;">পরীক্ষার আগে সম্পূর্ণ সিলেবাস দ্রুত রিভিশনের ব্যবস্থা।</p></div>
+        <div class="service-card"><i class="fa-solid fa-book-open"></i><h3>অনুশীলনী সমাধান</h3><p style="font-size:0.9rem; opacity:0.8;">পাঠ্যবইয়ের প্রতিটি অংক বুঝে সমাধান করা।</p></div>
+        <div class="service-card"><i class="fa-solid fa-shield-heart"></i><h3>আত্মবিশ্বাস বৃদ্ধি</h3><p style="font-size:0.9rem; opacity:0.8;">গণিতের ভীতি দূর করে আত্মবিশ্বাস গড়ে তোলা।</p></div>
+        <div class="service-card"><i class="fa-brands fa-whatsapp"></i><h3>সার্বক্ষণিক সাপোর্ট</h3><p style="font-size:0.9rem; opacity:0.8;">হোয়াটসঅ্যাপে অংকের ছোটখাটো সমস্যার সমাধান।</p></div>
+        <div class="service-card"><i class="fa-solid fa-file-invoice"></i><h3>মাসিক রিপোর্ট</h3><p style="font-size:0.9rem; opacity:0.8;">অভিভাবককে প্রতি মাসে সন্তানের অগ্রগতির রিপোর্ট প্রদান।</p></div>
       </div>
+    </div>
+
+
+    
+    <div class="quiz-section" id="quiz-section">
+      <h2 class="section-title"><i class="fa-solid fa-clipboard-question"></i> গণিত বেসিক টেস্ট (Live)</h2>
+      <div class="quiz-intro">
+        <p style="color:#64748b;">আপনার সন্তানের গণিতের ভিত্তি কতটা মজবুত? মাত্র ৫ মিনিটে যাচাই করুন। নিচের বক্সে ক্লাস সিলেক্ট করে টেস্ট শুরু করুন।</p>
+      </div>
+      
+      <select id="quiz-class-selector" class="class-selector" onchange="startQuiz()">
+        <option value="" disabled selected>কোন ক্লাসে পড়ে?</option>
+        <option value="class6">৬ষ্ঠ শ্রেণী</option>
+        <option value="class7">৭ম শ্রেণী</option>
+        <option value="class8">৮ম শ্রেণী</option>
+        <option value="class9">৯ম/১০ম শ্রেণী</option>
+      </select>
+
+      <div id="quiz-container" class="quiz-container">
+        <form id="quiz-form" onsubmit="submitQuiz(event)">
+          <div id="quiz-questions"></div>
+          
+          <div class="quiz-btn-row">
+            <button type="submit" class="btn">সাবমিট করুন</button>
+            <button type="button" class="btn btn-cancel" onclick="cancelQuiz()">বাতিল করুন</button>
+          </div>
+        </form>
+      </div>
+      
+
+      <div id="quiz-result-box">
+        <div class="score-circle" id="score-display">0/0</div>
+        <div class="result-msg" id="result-msg"></div>
+        
+        <div class="ad-box" id="ad-box">
+          <div class="ad-title" id="ad-title"></div>
+          <p id="ad-desc"></p>
+        </div>
+
+        <div id="solution-offer-box" style="margin-top: 25px; padding-top: 20px; border-top: 2px dashed #cbd5e1;">
+          <p style="font-weight: bold; color: var(--secondary); margin-bottom: 15px; font-size: 1.05rem;">
+            <i class="fa-solid fa-gift" style="color: #e11d48;"></i> বিস্তারিত সমাধান বা ফ্রি পরামর্শ পেতে আপনার নাম ও নম্বর দিন:
+          </p>
+
+          <form onsubmit="submitLead(event)" id="lead-form">
+            <input type="text" id="lead-name" placeholder="আপনার নাম" required
+                   style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;">
+            
+            <input type="tel" id="lead-phone" placeholder="মোবাইল নম্বর (017...)" required
+                   style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;">
+
+            <button type="submit" class="btn" style="width: 100%; justify-content: center; background: var(--secondary);">
+              <i class="fa-solid fa-paper-plane"></i> সমাধান ও পরামর্শ চাই
+            </button>
+          </form>
+
+          <div id="lead-success-msg" style="display: none; margin-top: 15px; text-align: center; background: #dcfce7; padding: 15px; border-radius: 10px; border: 1px solid #86efac;">
+            <p style="color: #166534; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem;">
+              <i class="fa-solid fa-circle-check"></i> দ্রুত আপনার সাথে যোগাযোগ করা হবে ইন শা আল্লাহ।
+            </p>
+            <a href="tel:+8801800000000" class="btn btn-call" style="width: 100%; justify-content: center;">
+              <i class="fa-solid fa-phone"></i> অথবা এখন কল করুন
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 0.9rem; color: #64748b;">
+          অথবা জরুরি প্রয়োজনে: <a href="tel:+8801800000000" style="color: var(--primary); font-weight: bold;">সরাসরি কল করুন</a>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <h2 class="section-title"><i class="fa-solid fa-quote-left"></i> অভিভাবকদের মতামত</h2>
+    <div class="testimonials">
+      <div class="review-grid">
+        <div class="review-card">
+          <p class="review-text">"আমার ছেলে ক্লাস ৮-এ পড়ার সময় গণিতকে যমের মতো ভয় পেত। সোলায়মান স্যারের কাছে ৩ মাস পড়ার পর এখন সে নিজেই অঙ্ক করতে বসে। স্যার শুধু অংক করান না, বরং কেন হচ্ছে সেটা খুব সুন্দর করে বুঝিয়ে দেন। আমি একজন অভিভাবক হিসেবে স্যারের পড়ানোর স্টাইলে খুবই সন্তুষ্ট।"</p>
+          <div class="reviewer"><span>— হাসিবুর রহমানের বাবা</span><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"আমার মেয়ে সামিয়ার গণিতের ভিত্তি একদম দুর্বল ছিল, ছোটখাটো যোগ-বিয়োগেও ভুল করত। স্যার খুব ধৈর্য ধরে তাকে বেসিক থেকে শিখিয়েছেন, এখন সে ক্লাসে অনেক ভালো নম্বর পাচ্ছে। তবে স্যার বাড়ির কাজের ব্যাপারে খুব কড়া, যেটা আমার কাছে ভালো লেগেছে। বাচ্চার উন্নতির জন্য এমন শিক্ষকই দরকার।"</p>
+          <div class="reviewer"><span>— সামিয়া আক্তারের মা</span><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+        </div>
+      </div>
+      
+      <div id="more-reviews" class="review-grid">
+        <div class="review-card">
+          <p class="review-text">"স্যারের কাছে আমার দুই ছেলে পড়ে। বড় ছেলে এবার জেএসসি-তে গণিতে এ প্লাস পেয়েছে, অথচ আগে সে পাশ করতেই হিমশিম খেত। স্যার খুব ফ্রেন্ডলি হওয়ায় বাচ্চারা তাকে ভয় পায় না, বরং মন খুলে প্রশ্ন করতে পারে। আমি সবাইকে স্যারের কাছে পড়ার পরামর্শ দেব।"</p>
+          <div class="reviewer"><span>— আবিরের মা</span><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"অনলাইনে অনেক টিউটর খুঁজেছি কিন্তু মনের মতো কাউকে পাইনি। অবশেষে সোলায়মান স্যারের সন্ধান পেলাম এবং তিনি সত্যিই অসাধারণ পড়ান। তিনি বাস্তব উদাহরণের মাধ্যমে কঠিন বিষয়গুলো পানির মতো সহজ করে দেন। আমার মেয়ে এখন গণিত বিষয়টি উপভোগ করতে শুরু করেছে।"</p>
+          <div class="reviewer"><span>— ফারিহার বাবা</span><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"আমার ছেলেটা একটু চঞ্চল, পড়ার টেবিলে বসতেই চাইত না। স্যার তাকে খুব কৌশলে গল্পের মাধ্যমে গণিত শেখান, এখন সে পড়ার জন্য আগ্রহ দেখায়। স্যারের ধৈর্যশক্তি দেখে আমি মুগ্ধ, তিনি কখনোই বিরক্ত হন না। দুর্বল ছাত্রদের জন্য তিনি সেরা শিক্ষক।"</p>
+          <div class="reviewer"><span>— সাজিদের বড় ভাই</span><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div></div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 25px;">
+        <button id="see-more-btn" onclick="toggleReviews()" class="btn btn-outline" style="cursor: pointer; padding: 10px 25px;">আরও রিভিউ দেখুন <i class="fa-solid fa-angle-down"></i></button>
+      </div>
+
+      <div class="review-submit-box">
+        <h3><i class="fa-solid fa-pen"></i> আপনার মতামত দিন</h3>
+        <p style="color:#64748b; margin-bottom:15px; font-size:0.9rem;">অন্য অভিভাবকরা যাতে সঠিক সিদ্ধান্ত নিতে পারেন, সেজন্য আপনার অভিজ্ঞতা শেয়ার করুন।</p>
+        
+        <form onsubmit="handleReview(event)">
+          <div class="star-rating-input" id="star-rating">
+            <i class="fa-regular fa-star" data-value="1"></i>
+            <i class="fa-regular fa-star" data-value="2"></i>
+            <i class="fa-regular fa-star" data-value="3"></i>
+            <i class="fa-regular fa-star" data-value="4"></i>
+            <i class="fa-regular fa-star" data-value="5"></i>
+          </div>
+          <input type="hidden" id="review_rating" value="0">
+          
+          <input type="text" id="review_name" class="review-input" placeholder="আপনার নাম (যেমন: আবিরের বাবা)" required>
+          <textarea id="review_msg" class="review-input" rows="3" placeholder="আপনার অভিজ্ঞতা লিখুন..." required></textarea>
+          
+          <button type="submit" class="btn">রিভিউ জমা দিন</button>
+        </form>
+        <div id="review-status" style="display:none; margin-top:15px; color:green; font-weight:bold;">ধন্যবাদ! আপনার রিভিউ জমা হয়েছে।</div>
+      </div>
+
+    </div>
+
+    <h2 class="section-title">সাধারণ কিছু প্রশ্ন (FAQ)</h2>
+    <div class="faq-section">
+      <details class="faq-item">
+        <summary>সপ্তাহে কতদিন পড়ানো হয়?</summary>
+        <p>সাধারণত সপ্তাহে ৩ দিন অথবা ৪ দিন পড়ানো হয়। তবে আলোচনার মাধ্যমে সময় বাড়ানো যেতে পারে।</p>
+      </details>
+      <details class="faq-item">
+        <summary>বাসায় গিয়ে পড়ানোর সুবিধা আছে কি?</summary>
+        <p>হ্যাঁ, আমি শিক্ষার্থীর বাসায় গিয়ে প্রাইভেট পড়িয়ে থাকি। তবে দূরত্ব এবং সময়ের ওপর নির্ভর করে।</p>
+      </details>
+      <details class="faq-item">
+        <summary>বেতন বা সম্মানী কত?</summary>
+        <p>এটি ক্লাস এবং সপ্তাহে কতদিন পড়াবো তার ওপর নির্ভর করে। কল করে বিস্তারিত আলোচনা করার অনুরোধ রইল।</p>
+      </details>
     </div>
 
     <div class="contact-section">
       <h2 style="margin-bottom: 20px; color: var(--secondary);"><i class="fa-solid fa-address-book"></i> বুকিং ফর্ম</h2>
       <p style="margin-bottom: 20px; color: #64748b;">কল করতে না চাইলে ফর্মটি পূরণ করুন, আমি কল করবো।</p>
-      
       <form onsubmit="handleForm(event)">
         <div class="form-grid">
-          <div>
-            <label style="display:block; margin-bottom:5px; font-weight:600;">আপনার নাম</label>
-            <input type="text" id="name" placeholder="অভিভাবক বা ছাত্রের নাম" required>
-          </div>
-          <div>
-            <label style="display:block; margin-bottom:5px; font-weight:600;">মোবাইল নাম্বার</label>
-            <input type="tel" id="phone" placeholder="017xxxxxxxx" required>
-          </div>
+          <div><label style="display:block; margin-bottom:5px; font-weight:600;">আপনার নাম</label><input type="text" id="name" placeholder="নাম" required></div>
+          <div><label style="display:block; margin-bottom:5px; font-weight:600;">মোবাইল</label><input type="tel" id="phone" placeholder="017xxxxxxxx" required></div>
           <div class="full-width">
             <label style="display:block; margin-bottom:5px; font-weight:600;">কোন ক্লাসের জন্য?</label>
             <select id="child_class" required>
-              <option value="" disabled selected>ক্লাস নির্বাচন করুন</option>
+              <option value="" disabled selected>নির্বাচন করুন</option>
               <option value="Class 6">৬ষ্ঠ শ্রেণী</option>
               <option value="Class 7">৭ম শ্রেণী</option>
               <option value="Class 8">৮ম শ্রেণী</option>
@@ -383,61 +730,316 @@
               <option value="Class 10">১০ম শ্রেণী</option>
             </select>
           </div>
-          <div class="full-width">
-            <label style="display:block; margin-bottom:5px; font-weight:600;">বিস্তারিত</label>
-            <textarea id="message" rows="3" placeholder="ঠিকানা বা বিশেষ কিছু বলার থাকলে..."></textarea>
-          </div>
-          <div class="full-width">
-            <button type="submit">তথ্য জমা দিন</button>
-          </div>
+          <div class="full-width"><label style="display:block; margin-bottom:5px; font-weight:600;">বিস্তারিত</label><textarea id="message" rows="3" placeholder="ঠিকানা..."></textarea></div>
+          <div class="full-width"><button type="submit">তথ্য জমা দিন</button></div>
         </div>
       </form>
-      <div id="form-msg" style="display:none; text-align: center; margin-top: 20px; color: green; font-weight: bold; background: #dcfce7; padding: 10px; border-radius: 8px;">
-        আপনার তথ্য জমা হয়েছে! আমরা শীঘ্রই কল করবো।
-      </div>
+      <div id="form-msg" style="display:none; text-align: center; margin-top: 20px; color: green; font-weight: bold; background: #dcfce7; padding: 10px; border-radius: 8px;">আপনার তথ্য জমা হয়েছে!</div>
     </div>
 
-    <footer>
-      <p>© ২০২৫ - মোঃ সোলায়মান হোসেন আলম | গণিত শিক্ষক</p>
-    </footer>
-
+    <footer><p>© ২০২৫ - মোঃ সোলায়মান হোসেন আলম | গণিত শিক্ষক</p></footer>
   </div>
 
   <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbwd1yfxGspJRcUdo1wsY948RcoR3r83z4fO6fAaRFck2VmGTZHzCSJ_oAR12_A7CnT1CA/exec"; 
-
+    
+    // Booking Form Handler
     function handleForm(e){
         e.preventDefault();
         const btn = e.target.querySelector('button');
         const originalText = btn.innerText;
         btn.disabled = true;
         btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> পাঠাচ্ছি...';
+        const formData = { name: document.getElementById('name').value, child_class: document.getElementById('child_class').value, phone: document.getElementById('phone').value, message: document.getElementById('message').value };
+        fetch(scriptURL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
+        .then(() => { document.getElementById('form-msg').style.display = 'block'; e.target.reset(); btn.disabled = false; btn.innerText = originalText; setTimeout(() => { document.getElementById('form-msg').style.display = 'none'; }, 5000); })
+        .catch(error => { alert("সমস্যা হয়েছে! কল করুন।"); btn.disabled = false; btn.innerText = originalText; });
+    }
+    //-------------------------------------------------------
 
-        const formData = {
-            name: document.getElementById('name').value,
-            child_class: document.getElementById('child_class').value,
-            phone: document.getElementById('phone').value,
-            message: document.getElementById('message').value
-        };
+    
+    // --- QUIZ LOGIC (20 Hard Basic Questions/Class) ---
+    const quizData = {
+      "class6": [
+        { q: "১. সবচেয়ে ছোট মৌলিক সংখ্যা কোনটি?", opts: ["১", "২", "৩", "০"], a: 1 },
+        { q: "২. ১০ এর ১/২ অংশের সাথে ৫ যোগ করলে কত?", opts: ["১০", "১৫", "২০", "৫"], a: 0 },
+        { q: "৩. ১ বিলিয়ন = কত কোটি?", opts: ["১০", "১০০", "১০০০", "৫০"], a: 1 },
+        { q: "৪. সমকোণী ত্রিভুজের একটি কোণ ৯০° হলে বাকি দুটির সমষ্টি কত?", opts: ["১৮০°", "৯০°", "৪৫°", "৬০°"], a: 1 },
+        { q: "৫. ০.৫ এর শতকরা রূপ কত?", opts: ["৫%", "৫০%", "০.০৫%", "৫০০%"], a: 1 },
+        { q: "৬. ১ থেকে ১০ এর মধ্যে কয়টি মৌলিক সংখ্যা?", opts: ["৩", "৪", "৫", "২"], a: 1 },
+        { q: "৭. গ.সা.গু এর পূর্ণরূপ কী?", opts: ["গরিষ্ঠ সাধারণ গুণনীয়ক", "গড় সাধারণ গুণিতক", "গরিষ্ঠ সাধারণ গুণিতক", "লঘিষ্ঠ সাধারণ গুণনীয়ক"], a: 0 },
+        { q: "৮. ভাজক ১০, ভাগফল ৫, ভাগশেষ ২ হলে ভাজ্য কত?", opts: ["৫০", "৫২", "২০", "১২"], a: 1 },
+        { q: "৯. চতুর্ভুজের চার কোণের সমষ্টি?", opts: ["১৮০°", "৩৬০°", "৯০°", "২৭০°"], a: 1 },
+        { q: "১০. কোনটি প্রকৃত ভগ্নাংশ?", opts: ["৩/২", "৫/৪", "২/৩", "৭/৩"], a: 2 },
+        { q: "১১. ১ হালি কলার দাম ২০ টাকা হলে ৩টির দাম কত?", opts: ["১০", "১৫", "১৮", "১২"], a: 1 },
+        { q: "১২. সরল কোণের মান কত?", opts: ["৯০°", "১৮০°", "৩৬০°", "০°"], a: 1 },
+        { q: "১৩. কোন সংখ্যাটি ৩ দ্বারা বিভাজ্য?", opts: ["১২৪", "১২৩", "১০০", "২০"], a: 1 },
+        { q: "১৪. ৫ এর ৩য় গুণিতক কোনটি?", opts: ["১০", "১৫", "২০", "৫"], a: 1 },
+        { q: "১৫. ১ ঘন্টা = কত সেকেন্ড?", opts: ["৩৬০০", "৬০", "১২০", "২৪০০"], a: 0 },
+        { q: "১৬. ত্রিভুজের ক্ষেত্রফল?", opts: ["ভূমি x উচ্চতা", "০.৫ x ভূমি x উচ্চতা", "দৈর্ঘ্য x প্রস্থ", "কোনোটিই না"], a: 1 },
+        { q: "১৭. কোনটি বৃহত্তম? ০.১, ০.০১, ০.০০১, ০.২", opts: ["০.১", "০.০১", "০.০০১", "০.২"], a: 3 },
+        { q: "১৮. ১ কিলোমিটার = কত মিটার?", opts: ["১০০", "১০০০", "১০", "৫০০"], a: 1 },
+        { q: "১৯. ১০০ টাকার ২৫% কত?", opts: ["২৫", "২০", "৫০", "১০০"], a: 0 },
+        { q: "২০. -৫ এর পরম মান কত?", opts: ["-৫", "০", "৫", "১০"], a: 2 }
+      ],
+      "class7": [
+        { q: "১. (-৫) + (+২) = ?", opts: ["-৩", "-৭", "+৩", "৭"], a: 0 },
+        { q: "২. (-৩) x (-৪) = ?", opts: ["-১২", "১২", "৭", "-৭"], a: 1 },
+        { q: "৩. a^0 = ?", opts: ["0", "1", "a", "undefined"], a: 1 },
+        { q: "৪. ত্রিভুজের তিন কোণের সমষ্টি?", opts: ["৯০°", "১৮০°", "৩৬০°", "১০০°"], a: 1 },
+        { q: "৫. (a+b)^2 এর সূত্র কোনটি?", opts: ["a^2+b^2", "a^2+2ab+b^2", "a^2-2ab+b^2", "2ab"], a: 1 },
+        { q: "৬. কোন সংখ্যাকে ০ দিয়ে ভাগ করলে কী হয়?", opts: ["০", "১", "অসংজ্ঞায়িত", "ওই সংখ্যা"], a: 2 },
+        { q: "৭. সম্পূরক কোণের সমষ্টি কত?", opts: ["৯০°", "১৮০°", "৩৬০°", "৪৫°"], a: 1 },
+        { q: "৮. ১ হেক্টর = কত একর (প্রায়)?", opts: ["২.৪৭", "১.৫", "৩.৫", "২.০"], a: 0 },
+        { q: "৯. ২x + ৩ = ৯ হলে x = ?", opts: ["২", "৩", "৪", "১"], a: 1 },
+        { q: "১০. ৩:৪ এর ব্যস্ত অনুপাত?", opts: ["৪:৩", "৩:৪", "৬:৮", "৯:১২"], a: 0 },
+        { q: "১১. মূলদ সংখ্যা কোনটি?", opts: ["√2", "√3", "√4", "π"], a: 2 },
+        { q: "১২. বৃত্তের পরিধি ও ব্যাসের অনুপাত?", opts: ["π (পাই)", "২", "১", "৪"], a: 0 },
+        { q: "১৩. সামান্তরিকের ক্ষেত্রফল?", opts: ["ভূমি x উচ্চতা", "১/২ x ভূমি x উচ্চতা", "দৈর্ঘ্য x প্রস্থ", "বাহু^২"], a: 0 },
+        { q: "১৪. x^2 - y^2 = ?", opts: ["(x-y)^2", "(x+y)(x-y)", "x^2+y^2", "xy"], a: 1 },
+        { q: "১৫. ৫ জন লোক একটি কাজ ১০ দিনে করে, ১ জন কত দিনে করবে?", opts: ["২", "৫০", "৫", "২০"], a: 1 },
+        { q: "১৬. বৃহত্তম ঋনাত্মক পূর্ণসংখ্যা?", opts: ["-১", "-১০০", "-৯৯", "০"], a: 0 },
+        { q: "১৭. পূরক কোণের সমষ্টি কত?", opts: ["৯০°", "১৮০°", "৩৬০°", "৪৫°"], a: 0 },
+        { q: "১৮. ১ ইঞ্চি = কত সে.মি.?", opts: ["২.৫৪", "১.৫৪", "৩.৫৪", "২.০০"], a: 0 },
+        { q: "১৯. লাভ = ?", opts: ["ক্রয় - বিক্রয়", "বিক্রয় - ক্রয়", "আসল - সুদ", "কোনোটিই না"], a: 1 },
+        { q: "২০. (-১)^৩ = ?", opts: ["১", "-১", "৩", "-৩"], a: 1 }
+      ],
+      "class8": [
+        { q: "১. পিথাগোরাসের উপপাদ্য কোন ত্রিভুজে খাটে?", opts: ["সমবাহু", "সমকোণী", "স্থূলকোণী", "সূক্ষ্মকোণী"], a: 1 },
+        { q: "২. (a+b)^2 - (a-b)^2 = ?", opts: ["2(a^2+b^2)", "4ab", "2ab", "a^2+b^2"], a: 1 },
+        { q: "৩. বৃত্তের ব্যাস ব্যাসার্ধের কত গুণ?", opts: ["অর্ধেক", "দ্বিগুণ", "সমান", "তিনগুণ"], a: 1 },
+        { q: "৪. সেট প্রকাশের পদ্ধতি কয়টি?", opts: ["১", "২", "৩", "৪"], a: 1 },
+        { q: "৫. ১ থেকে ১০০ পর্যন্ত মৌলিক সংখ্যা কয়টি?", opts: ["২৫", "৩০", "২০", "১৫"], a: 0 },
+        { q: "৬. সুষম বহুভুজের বহিঃস্থ কোণ ৩৬° হলে বাহু কয়টি?", opts: ["৮", "৯", "১০", "১২"], a: 2 },
+        { q: "৭. মুনাফা-আসল (A) = ?", opts: ["P(1+nr)", "Pnr", "I+P", "P/I"], a: 2 },
+        { q: "৮. x + 1/x = 2 হলে x = ?", opts: ["0", "1", "2", "-1"], a: 1 },
+        { q: "৯. অমূলদ সংখ্যা কোনটি?", opts: ["০", "১", "√২", "√৯"], a: 2 },
+        { q: "১০. ট্রাপিজিয়ামের ক্ষেত্রফল?", opts: ["০.৫ x (সমান্তরাল বাহুর যোগফল) x উচ্চতা", "ভূমি x উচ্চতা", "দৈর্ঘ্য x প্রস্থ", "কোনোটিই না"], a: 0 },
+        { q: "১১. ৩, ৫, ৭... ১০ম পদ কত?", opts: ["১৯", "২১", "২৩", "২৫"], a: 1 },
+        { q: "১২. রম্বসের কর্ণদ্বয় কত ডিগ্রিতে ছেদ করে?", opts: ["৪৫", "৬০", "৯০", "১৮০"], a: 2 },
+        { q: "১৩. মধ্যক নির্ণয়ে উপাত্ত কী করতে হয়?", opts: ["যোগ", "বিয়োগ", "সাজাতে হয়", "গুণ"], a: 2 },
+        { q: "১৪. ৫০০ টাকার ৫% হার মুনাফায় ২ বছরের মুনাফা?", opts: ["৫০", "২৫", "১০০", "১০"], a: 0 },
+        { q: "১৫. (x+a)(x+b) = ?", opts: ["x^2+(a+b)x+ab", "x^2+abx+ab", "x^2+ab", "কোনোটিই না"], a: 0 },
+        { q: "১৬. বৃত্তের ক্ষেত্রফল?", opts: ["2πr", "πr^2", "πr", "2r"], a: 1 },
+        { q: "১৭. আয়তক্ষেত্রের পরিসীমা?", opts: ["2(L+W)", "L+W", "LxW", "2LW"], a: 0 },
+        { q: "১৮. ঘনকের তল কয়টি?", opts: ["৪", "৬", "৮", "১০"], a: 1 },
+        { q: "১৯. ফিবোনাক্কি সংখ্যা নয় কোনটি?", opts: ["১", "২", "৩", "৪"], a: 3 },
+        { q: "২০. ১ কুইন্টাল = কত কেজি?", opts: ["১০০", "১০০০", "১০", "৫০"], a: 0 }
+      ],
+      "class9": [
+        { q: "১. sin 30° এর মান?", opts: ["1", "0", "0.5", "√3/2"], a: 2 },
+        { q: "২. log 10 ভিত্তিক 100 = ?", opts: ["10", "2", "100", "0"], a: 1 },
+        { q: "৩. সেটের সংযোগ (Union) চিহ্ন?", opts: ["∩", "U", "C", "φ"], a: 1 },
+        { q: "৪. f(x) = x+1 হলে f(0) = ?", opts: ["0", "1", "-1", "2"], a: 1 },
+        { q: "৫. tan 45° = ?", opts: ["0", "1", "∞", "√3"], a: 1 },
+        { q: "৬. বৃত্তস্ত চতুর্ভুজের বিপরীত কোণের সমষ্টি?", opts: ["৯০°", "১৮০°", "৩৬০°", "১০০°"], a: 1 },
+        { q: "৭. বাস্তব সংখ্যার সেট?", opts: ["N", "Z", "R", "Q"], a: 2 },
+        { q: "৮. 3^0 = ?", opts: ["0", "1", "3", "undefined"], a: 1 },
+        { q: "৯. a^3 - b^3 এর উৎপাদক সূত্র?", opts: ["(a-b)^3", "(a-b)(a^2+ab+b^2)", "(a+b)(a^2-ab+b^2)", "a^3+b^3"], a: 1 },
+        { q: "১০. 4^x = 16 হলে x = ?", opts: ["2", "4", "16", "1"], a: 0 },
+        { q: "১১. অতিভুজই কি বৃহত্তম বাহু?", opts: ["হ্যাঁ", "না", "কখনো কখনো", "অনিশ্চিত"], a: 0 },
+        { q: "১২. sec^2 A - tan^2 A = ?", opts: ["0", "1", "-1", "2"], a: 1 },
+        { q: "১৩. মূলদ সংখ্যা কোনটি?", opts: ["π", "e", "√2", "2.5"], a: 3 },
+        { q: "১৪. x^2 - 5x + 6 = 0 এর মূলদ্বয়?", opts: ["2,3", "-2,-3", "1,6", "-1,-6"], a: 0 },
+        { q: "১৫. সুষম ষড়ভুজের প্রতিটি কোণ?", opts: ["৯০°", "১২০°", "১০৮°", "৬০°"], a: 1 },
+        { q: "১৬. n(A) = 3 হলে P(A) এর উপাদান?", opts: ["৩", "৬", "৮", "৯"], a: 2 },
+        { q: "১৭. স্পর্শক ও ব্যাসার্ধের মধ্যবর্তী কোণ?", opts: ["০°", "৪৫°", "৯০°", "১৮০°"], a: 2 },
+        { q: "১৮. log_a a = ?", opts: ["0", "1", "a", "-1"], a: 1 },
+        { q: "১৯. বেলনের আয়তন?", opts: ["πr^2h", "2πrh", "πrh", "1/3πr^2h"], a: 0 },
+        { q: "২০. 0! = ?", opts: ["0", "1", "undefined", "-1"], a: 1 }
+      ]
+    };
 
-        fetch(scriptURL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        })
-        .then(() => {
-            document.getElementById('form-msg').style.display = 'block';
-            e.target.reset();
-            btn.disabled = false;
-            btn.innerText = originalText;
-            setTimeout(() => { document.getElementById('form-msg').style.display = 'none'; }, 5000);
-        })
-        .catch(error => {
-            alert("Error! Please try calling directly.");
-            btn.disabled = false;
-            btn.innerText = originalText;
+    let currentQuestions = [];
+
+    function startQuiz() {
+      const cls = document.getElementById("quiz-class-selector").value;
+      const container = document.getElementById("quiz-container");
+      const resultBox = document.getElementById("quiz-result-box");
+      const qDiv = document.getElementById("quiz-questions");
+      resultBox.style.display = "none";
+      qDiv.innerHTML = "";
+      if (!cls || !quizData[cls]) return;
+      currentQuestions = quizData[cls] || quizData["class9"];
+      currentQuestions.forEach((item, index) => {
+        let html = `<div class="question-box"><div class="question-title">${item.q}</div><div class="options-grid">`;
+        item.opts.forEach((opt, optIndex) => { html += `<label class="option-label"><input type="radio" name="q${index}" value="${optIndex}" required> ${opt}</label>`; });
+        html += `</div></div>`;
+        qDiv.innerHTML += html;
+      });
+      container.style.display = "block";
+    }
+
+    function submitQuiz(e) {
+      e.preventDefault();
+      let score = 0;
+      currentQuestions.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected && parseInt(selected.value) === item.a) score++;
+      });
+      
+      // প্রশ্নগুলো লুকিয়ে ফেলা
+      document.getElementById("quiz-container").style.display = "none";
+      
+      const resultBox = document.getElementById("quiz-result-box");
+      const resultMsg = document.getElementById("result-msg");
+      const adTitle = document.getElementById("ad-title");
+      const adDesc = document.getElementById("ad-desc");
+      const scoreDisplay = document.getElementById("score-display");
+      
+      scoreDisplay.innerText = score + "/20";
+      resultBox.style.display = "block";
+      resultBox.className = ""; // Reset classes
+
+      // --- নতুন লাইন (এই লাইনটি আপনার সমস্যার সমাধান করবে) ---
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // ----------------------------------------------------
+
+      // Ad Logic Based on Score
+      if (score <= 10) {
+        resultBox.classList.add("res-bad");
+        resultMsg.innerText = "সতর্কতা: বেসিক খুবই দুর্বল!"; resultMsg.className = "result-msg txt-bad";
+        adTitle.innerText = "🚨 জরুরি টিউশন প্রয়োজন!";
+        adDesc.innerText = "আপনার সন্তানের গণিতের ভিত্তি নড়বড়ে। এখনই যত্ন না নিলে উপরের ক্লাসে বড় সমস্যায় পড়বে। বেসিক স্ট্রং করতে আজই আমার 'Weak Foundation Fixing' প্রোগ্রামে ভর্তি করান।";
+      } else if (score <= 15) {
+        resultBox.classList.add("res-avg");
+        resultMsg.innerText = "মোটামুটি, তবে আরও ভালো করতে হবে।"; resultMsg.className = "result-msg txt-avg";
+        adTitle.innerText = "📈 প্র্যাকটিস ব্যাচে ভর্তি চলছে!";
+        adDesc.innerText = "আপনার সন্তানের পটেনশিয়াল আছে, কিন্তু সঠিক গাইডলাইনের অভাবে পূর্ণ মার্কস পাচ্ছে না। নিয়মিত প্র্যাকটিস ও কৌশলী পড়াশোনার জন্য আমার ব্যাচে যোগাযোগ করুন।";
+      } else {
+        resultBox.classList.add("res-good");
+        resultMsg.innerText = "অভিনন্দন! চমৎকার বেসিক!"; resultMsg.className = "result-msg txt-good";
+        adTitle.innerText = "🏆 অ্যাডভান্সড ব্যাচে স্বাগতম!";
+        adDesc.innerText = "আপনার সন্তান গণিতে বেশ ভালো। তাকে ১০০ তে ১০০ পাওয়ার উপযোগী করে গড়ে তুলতে এবং অলিম্পিয়াড লেভেলের জন্য প্রস্তুত করতে আমার অ্যাডভান্সড ব্যাচে দিতে পারেন।";
+      }
+    }
+    // টেস্ট বাতিল করার ফাংশন
+    function cancelQuiz() {
+      document.getElementById("quiz-container").style.display = "none";
+      document.getElementById("quiz-result-box").style.display = "none";
+      document.getElementById("quiz-class-selector").selectedIndex = 0;
+      // পেজ একটু উপরে স্ক্রল করে টাইটেলে নিয়ে যাবে
+      document.getElementById("quiz-section").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    //---------------------------------------------------------
+    // Toggle Reviews Logic
+    function toggleReviews() {
+        var moreReviews = document.getElementById("more-reviews");
+        var btn = document.getElementById("see-more-btn");
+        
+        if (moreReviews.style.display === "none" || moreReviews.style.display === "") {
+            moreReviews.style.display = "grid";
+            btn.innerHTML = 'রিভিউ লুকান <i class="fa-solid fa-angle-up"></i>';
+        } else {
+            moreReviews.style.display = "none";
+            btn.innerHTML = 'আরও রিভিউ দেখুন <i class="fa-solid fa-angle-down"></i>';
+            document.querySelector('.testimonials').scrollIntoView({behavior: 'smooth'});
+        }
+    }
+
+    // Slider Logic
+    function slideLeft() {
+        var slider = document.getElementById('slider');
+        slider.scrollBy({ left: -340, behavior: 'smooth' });
+    }
+    function slideRight() {
+        var slider = document.getElementById('slider');
+        slider.scrollBy({ left: 340, behavior: 'smooth' });
+    }
+
+    // --- REVIEW FORM LOGIC ---
+    
+    // 1. Star Rating Logic
+    const stars = document.querySelectorAll('#star-rating i');
+    const ratingInput = document.getElementById('review_rating');
+    
+    stars.forEach(star => {
+      star.addEventListener('click', function() {
+        const val = this.getAttribute('data-value');
+        ratingInput.value = val;
+        
+        // Visual Update
+        stars.forEach(s => {
+          if(s.getAttribute('data-value') <= val) {
+            s.classList.remove('fa-regular');
+            s.classList.add('fa-solid', 'active');
+          } else {
+            s.classList.remove('fa-solid', 'active');
+            s.classList.add('fa-regular');
+          }
         });
+      });
+    });
+
+    // 2. Review Submission Handler
+    function handleReview(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const originalText = btn.innerText;
+      btn.disabled = true;
+      btn.innerText = 'জমা হচ্ছে...';
+      
+      const formData = {
+        name: document.getElementById('review_name').value + " (REVIEW: " + document.getElementById('review_rating').value + " Stars)",
+        phone: "N/A", 
+        child_class: "Review Submission",
+        message: document.getElementById('review_msg').value
+      };
+
+      fetch(scriptURL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
+      .then(() => { 
+        document.getElementById('review-status').style.display = 'block'; 
+        e.target.reset(); 
+        const stars = document.querySelectorAll('#star-rating i');
+        stars.forEach(s => { s.classList.remove('fa-solid', 'active'); s.classList.add('fa-regular'); });
+        btn.disabled = false; 
+        btn.innerText = originalText; 
+        setTimeout(() => { document.getElementById('review-status').style.display = 'none'; }, 5000);
+      })
+      .catch(error => { 
+        alert("সমস্যা হয়েছে! আবার চেষ্টা করুন।"); 
+        btn.disabled = false; 
+        btn.innerText = originalText; 
+      });
+    } 
+
+    // --- LEAD FORM SUBMISSION (QUIZ) ---
+    function submitLead(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const originalText = btn.innerHTML;
+      
+      // লোডিং ইফেক্ট
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> প্রসেসিং...';
+
+      // ডাটা সংগ্রহ
+      const name = document.getElementById('lead-name').value;
+      const phone = document.getElementById('lead-phone').value;
+      const score = document.getElementById('score-display').innerText;
+      const cls = document.getElementById('quiz-class-selector').value || "Unknown Class";
+
+      // আপনার গুগল শিটে পাঠানোর ডাটা ফরম্যাট
+      const formData = {
+        name: name,
+        phone: phone,
+        child_class: cls + " (Quiz Result: " + score + ")", 
+        message: "User requested solution/counseling after quiz."
+      };
+
+      // ডাটা পাঠানো
+      fetch(scriptURL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
+      .then(() => {
+        // সফল হলে ফর্ম লুকিয়ে মেসেজ দেখানো
+        document.getElementById('lead-form').style.display = 'none';
+        document.getElementById('lead-success-msg').style.display = 'block';
+      })
+      .catch(error => {
+        alert("দুঃখিত! কিছু সমস্যা হয়েছে। সরাসরি কল করুন।");
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      });
     }
   </script>
 </body>
