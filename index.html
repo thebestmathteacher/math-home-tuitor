@@ -315,7 +315,61 @@
     .full-width { grid-column: span 2; }
     button[type="submit"] { background: var(--secondary); color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: 600; }
 
-    footer { text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.9rem; }
+    /* --- Footer Update --- */
+    footer { 
+      text-align: center; 
+      padding: 40px 0 20px 0; /* প্যাডিং সামান্যে বাড়ানো হলো */
+      color: var(--text-main); /* টেক্সট কালার মেইন টেক্সট কালার করা হলো */
+      font-size: 0.95rem; 
+      background: #f1f5f9; /* হালকা ব্যাকগ্রাউন্ড */
+      margin-top: 40px;
+    }
+    .footer-top {
+        max-width: 800px;
+        margin: 0 auto 20px auto;
+        padding: 0 20px;
+    }
+    .footer-highlight {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--secondary);
+        margin-bottom: 15px;
+    }
+    .footer-stats {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 30px;
+        margin-bottom: 25px;
+        font-size: 0.9rem;
+        color: #64748b;
+    }
+    .footer-contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 30px;
+        margin-bottom: 30px;
+    }
+    .footer-contact-item a {
+        color: var(--primary);
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .footer-contact-item a:hover {
+        color: var(--primary-dark);
+    }
+    .footer-divider {
+        border-top: 1px solid #cbd5e1;
+        width: 80%;
+        margin: 0 auto 20px auto;
+    }
+    .footer-quote {
+        font-style: italic;
+        color: #475569;
+        margin-bottom: 15px;
+    }
 
     @media (max-width: 768px) {
       .hero-section { flex-direction: column; text-align: center; padding: 30px 20px; }
@@ -787,7 +841,7 @@
     <!-- Plan Start -->
     <div style="margin-bottom: 50px;">
       <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> আপনার সন্তানের জন্য সঠিক কেয়ার প্ল্যান</h2>
-      <p style="text-align: center; color: #64748b; margin-bottom: 30px;">শিক্ষার্থীর মেধা যাচাই করে ৩টি ভিন্ন পদ্ধতিতে স্পেশাল যত্ন (1-to-1) নেওয়া হয়</p>
+      <p style="text-align: center; color: #64748b; margin-bottom: 30px;">প্রতিটি শিক্ষার্থীর শেখার গতি আলাদা। টেস্টের ফলাফল অনুযায়ী ৩ ধরনের স্পেশাল কেয়ার প্ল্যান তৈরি করেছি—বেসিক কেয়ার, রেগুলার কেয়ার ও অ্যাডভান্সড গাইডলাইন।</p>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
         
@@ -796,7 +850,7 @@
             <i class="fa-solid fa-heart-pulse" style="font-size: 1.5rem; color: #ef4444;"></i>
           </div>
           <h3 style="color: #ef4444; margin-bottom: 5px;">১. বেসিক কেয়ার (Basic Care)</h3>
-          <p style="font-size: 0.85rem; font-weight: bold; color: #dc2626; margin-bottom: 15px; background: #fef2f2; display: inline-block; padding: 3px 10px; border-radius: 20px;">🛡️ যাদের বেসিক দুর্বল, গণিত ভীতি আছে - গণিতভীতি দূর করার প্রোগ্রাম</p>
+          <p style="font-size: 0.85rem; font-weight: bold; color: #dc2626; margin-bottom: 15px; background: #fef2f2; display: inline-block; padding: 3px 10px; border-radius: 20px;">🛡️ গণিতভীতি দূর করার প্রোগ্রাম</p>
           
           <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
             <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
@@ -818,7 +872,7 @@
             <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: #f59e0b;"></i>
           </div>
           <h3 style="color: #d97706; margin-bottom: 5px;">২. রেগুলার কেয়ার (Regular)</h3>
-          <p style="font-size: 0.85rem; font-weight: bold; color: #d97706; margin-bottom: 15px; background: #fff7ed; display: inline-block; padding: 3px 10px; border-radius: 20px;">📈 যাদের বেসিক মোটামুটি আছে কিন্তু রেগুলার গাইডলাইন দরকার</p>
+          <p style="font-size: 0.85rem; font-weight: bold; color: #d97706; margin-bottom: 15px; background: #fff7ed; display: inline-block; padding: 3px 10px; border-radius: 20px;">📈 ধারাবাহিক ভালো রেজাল্ট প্রোগ্রাম</p>
           
           <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
             <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
@@ -1070,8 +1124,40 @@
       </form>
       <div id="form-msg" style="display:none; text-align: center; margin-top: 20px; color: green; font-weight: bold; background: #dcfce7; padding: 10px; border-radius: 8px;">আপনার তথ্য জমা হয়েছে! খুব শীঘ্রই আমি আপনার সাথে যোগাযোগ করবো ইন শা আল্লাহ্‌।</div>
     </div>
+    <!-- Footer start-->
+    <footer>
+        <div class="footer-top">
+            <p class="footer-highlight">আপনার সন্তানের গণিত শেখাকে আরও সহজ ও কার্যকর করতে পাশে আছি</p>
 
-    <footer><p>© ২০২৫ - মোঃ সোলায়মান হোসেন আলম | গণিত শিক্ষক</p></footer>
+            <div class="footer-stats">
+                <span><i class="fa-solid fa-hourglass-half" style="color:#f59e0b;"></i> ৭+ বছরের অভিজ্ঞতা</span>
+                <span><i class="fa-solid fa-bullseye" style="color:#16a34a;"></i> ফলাফল-কেন্দ্রিক শেখানো</span>
+                <span><i class="fa-solid fa-chart-bar" style="color:#2563eb;"></i> অভিভাবক মনিটরিং ব্যবস্থা</span>
+            </div>
+
+            <div class="footer-contact-info">
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-phone-volume"></i> 
+                    <a href="tel:+8801639498196">সরাসরি কল: 01639-498196</a>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-brands fa-whatsapp"></i> 
+                    <a href="https://wa.me/8801639498196">WhatsApp: wa.me/8801639498196</a>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-location-dot"></i> 
+                    <span>সদর, ময়মনসিংহ।</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <p class="footer-quote">“শেখা শুধু নম্বরের জন্য নয়—দক্ষতার জন্য।”</p>
+        <p style="font-size: 0.85rem; color: #94a3b8;">
+          © ২০২৫ - মোঃ সোলায়মান হোসেন আলম | গণিত মেন্টর
+        </p>
+    </footer>
   </div>
 
   <script>
