@@ -772,56 +772,86 @@
       animation: timerPulse 1s infinite;
     }
     /*end*/
-    /* আমার পড়ানোর পদ্ধতি mobile e choto korechi */
-    /* Mobile Process Section Fix - Horizontal Scroll */
+    /* Mobile Process Section Fix - with Animation & Hint */
     @media (max-width: 768px) {
-      .process-steps {
-        display: flex !important;
-        flex-direction: row !important; /* পাশাপাশি রাখা */
-        flex-wrap: nowrap !important;   /* নিচে নামবে না */
-        overflow-x: auto;               /* স্ক্রল হবে */
-        justify-content: flex-start;
-        gap: 15px;
-        padding-bottom: 20px;           /* টাচ করার সুবিধার জন্য নিচে ফাঁকা */
-        scroll-behavior: smooth;
-        
-        /* স্ক্রলবার লুকানো (ক্লিন লুকের জন্য) */
-        scrollbar-width: none;          /* Firefox */
-        -ms-overflow-style: none;       /* IE/Edge */
-      }
-      
-      .process-steps::-webkit-scrollbar { 
-        display: none;                  /* Chrome/Safari */
+      /* ১. কন্টেইনারে রিলেটিভ পজিশন দেওয়া (ইঙ্গিত দেখানোর জন্য) */
+      .process-container {
+        position: relative;
+        padding-bottom: 40px; /* নিচে টেক্সটের জন্য জায়গা */
       }
     
+      /* ২. নির্দেশনা টেক্সট যোগ করা */
+      .process-container::after {
+        content: 'ডানে স্লাইড করুন ↔️';
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.85rem;
+        color: var(--primary);
+        background: #eff6ff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        border: 1px solid #bfdbfe;
+        animation: fadePulse 2s infinite;
+        pointer-events: none; /* এর ওপর ক্লিক করলে যাতে সমস্যা না হয় */
+      }
+    
+      /* ৩. কার্ডগুলো পাশাপাশি এবং স্ক্রলযোগ্য করা */
+      .process-steps {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        scroll-behavior: smooth;
+        
+        /* অ্যানিমেশন যোগ করা (Nudge Effect) */
+        animation: scrollHint 2s ease-in-out 1s 1; /* ১ সেকেন্ড পর একবার নড়বে */
+      }
+    
+      /* ৪. কার্ডের সাইজ ফিক্স করা */
       .step {
-        flex: 0 0 140px;               /* কার্ডের ফিক্সড সাইজ */
+        flex: 0 0 140px;      /* ফিক্সড সাইজ */
         min-width: 140px;
-        background: #f8fafc;           /* কার্ডের মতো ব্যাকগ্রাউন্ড */
+        background: #f8fafc;
         padding: 15px;
         border-radius: 12px;
         border: 1px solid #e2e8f0;
         margin: 0 !important;
       }
-      
-      /* মোবাইলে তীর চিহ্ন বা অ্যারো লুকানো থাকবে */
-      .arrow-icon {
-        display: none !important;
+    
+      /* ৫. তীর চিহ্ন লুকানো */
+      .arrow-icon { display: none !important; }
+    
+      /* ৬. স্ক্রলবার চিকন করে দেখানো (লুকানো নয়) */
+      .process-steps::-webkit-scrollbar {
+        height: 4px; /* খুব চিকন বার */
       }
-      
-      /* ইউজারকে বোঝানোর জন্য যে এটি স্ক্রল করা যায় */
-      .process-container::after {
-        content: 'ডানে স্লাইড করুন ➡';
-        display: block;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #94a3b8;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        animation: fadeIn 2s infinite;
+      .process-steps::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 10px;
+      }
+      .process-steps::-webkit-scrollbar-thumb {
+        background: #cbd5e1; /* হালকা কালার */
+        border-radius: 10px;
       }
     }
-    /*end*/
+    
+    /* অ্যানিমেশন কিফ্রেম */
+    @keyframes scrollHint {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-40px); } /* একটু বামে যাবে */
+      40% { transform: translateX(0); }     /* আবার জায়গায় আসবে */
+      60% { transform: translateX(-20px); } /* আরেকটু বামে */
+      100% { transform: translateX(0); }
+    }
+    
+    @keyframes fadePulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
   </style>
 </head>
 <body>
@@ -2283,5 +2313,6 @@
   </script>
 </body>
 </html>
+
 
 
