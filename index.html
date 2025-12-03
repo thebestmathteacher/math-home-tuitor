@@ -773,33 +773,52 @@
     }
     /*end*/
     /* আমার পড়ানোর পদ্ধতি mobile e choto korechi */
-    /* Mobile Process Section Fix - 2 Column Grid */
+    /* Mobile Process Section Fix - Horizontal Scroll */
     @media (max-width: 768px) {
       .process-steps {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr; /* দুটি কলাম */
+        display: flex !important;
+        flex-direction: row !important; /* পাশাপাশি রাখা */
+        flex-wrap: nowrap !important;   /* নিচে নামবে না */
+        overflow-x: auto;               /* স্ক্রল হবে */
+        justify-content: flex-start;
         gap: 15px;
+        padding-bottom: 20px;           /* টাচ করার সুবিধার জন্য নিচে ফাঁকা */
+        scroll-behavior: smooth;
+        
+        /* স্ক্রলবার লুকানো (ক্লিন লুকের জন্য) */
+        scrollbar-width: none;          /* Firefox */
+        -ms-overflow-style: none;       /* IE/Edge */
       }
-
+      
+      .process-steps::-webkit-scrollbar { 
+        display: none;                  /* Chrome/Safari */
+      }
+    
       .step {
-        background: #f8fafc;
+        flex: 0 0 140px;               /* কার্ডের ফিক্সড সাইজ */
+        min-width: 140px;
+        background: #f8fafc;           /* কার্ডের মতো ব্যাকগ্রাউন্ড */
         padding: 15px;
         border-radius: 12px;
         border: 1px solid #e2e8f0;
         margin: 0 !important;
-        width: 100% !important;
       }
       
-      /* তীর চিহ্ন লুকানো থাকবে কারণ গ্রিডে তীরের দরকার নেই */
+      /* মোবাইলে তীর চিহ্ন বা অ্যারো লুকানো থাকবে */
       .arrow-icon {
         display: none !important;
       }
       
-      /* শেষ ধাপটি মাঝখানে দেখাবে */
-      .step:last-child {
-        grid-column: span 2; /* পুরো জায়গা নিবে */
-        width: 50% !important;
-        margin: 0 auto !important;
+      /* ইউজারকে বোঝানোর জন্য যে এটি স্ক্রল করা যায় */
+      .process-container::after {
+        content: 'ডানে স্লাইড করুন ➡';
+        display: block;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #94a3b8;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        animation: fadeIn 2s infinite;
       }
     }
     /*end*/
@@ -2264,4 +2283,5 @@
   </script>
 </body>
 </html>
+
 
