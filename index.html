@@ -455,8 +455,6 @@
     #reopen-btn-area { display: none; margin-top: 20px; text-align: center; }
 
     /* Start Success story */
-    /* --- SUCCESS STORY STYLES --- */
-    /* --- SUCCESS STORY STYLES --- */
     .success-story-section { 
       background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); 
       padding: 40px; /* <--- বাম ও ডানে ফাঁকা জায়গা তৈরি করার জন্য Padding যোগ করা হলো */
@@ -690,12 +688,28 @@
     }
 
     /* পেছনের অংশ (উত্তর) */
+    /* আপনার বর্তমান CSS এ এই অংশটুকু আপডেট করে দিন */
     .flip-card-back {
       background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
       color: #1e293b;
       transform: rotateY(180deg);
-      overflow-y: auto; /* লেখা বেশি হলে স্ক্রল হবে */
+      overflow-y: auto; /* স্ক্রল করার অনুমতি */
       border-color: var(--primary);
+      
+      /* --- পরিবর্তন এখান থেকে --- */
+      justify-content: flex-start; /* লেখা উপর থেকে শুরু হবে, মাঝখান থেকে নয় */
+      align-items: center;
+      padding: 15px; /* চারপাশ থেকে একটু জায়গা ছাড়বে */
+      /* --- পরিবর্তন শেষ --- */
+    }
+
+    /* স্ক্রলবার যাতে দেখতে খারাপ না লাগে তার জন্য এইটুকু যোগ করতে পারেন */
+    .flip-card-back::-webkit-scrollbar {
+      width: 5px;
+    }
+    .flip-card-back::-webkit-scrollbar-thumb {
+      background: #cbd5e1; 
+      border-radius: 10px;
     }
       /* কার্ডের উল্টো পাশে ছোট করে প্রশ্ন দেখানোর ডিজাইন */
     .mini-q-ref {
@@ -1232,7 +1246,7 @@
         </div>
         <h1>মোঃ সোলায়মান হোসেন আলম</h1>
         <p class="bio">
-          গণিত কোনো ভয়ের বিষয় নয়, এটি একটি ভাষা।" আমি গত ৮ বছর ধরে এই ভাষাই শিক্ষার্থীদের সহজ করে শিখিয়ে আসছি। সঠিক গাইডলাইন পেলে আপনার সন্তানও গণিতে দক্ষ হতে পারে।
+          গণিত কোনো ভয়ের বিষয় নয়, এটি একটি ভাষা।" আমি গত ৮ বছর ধরে এই ভাষাই শিক্ষার্থীদের সহজ করে শিখিয়ে আসছি।
         </p>
         
         <div class="hero-btns">
@@ -1340,7 +1354,7 @@
     
     </section>
     <!--About & why me end-->
-<!--
+    <!--
     <div class="process-container">
       <h2 class="section-title">আমার পড়ানোর পদ্ধতি</h2>
       <p style="text-align:center; color:#64748b; margin-bottom:20px;">গণিতকে বোঝার বিষয় বানাই, মুখস্থের নয়।</p>
@@ -1356,7 +1370,217 @@
         <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="step"><div class="step-icon"><i class="fa-solid fa-trophy"></i></div><h4>পরীক্ষা</h4></div>
       </div>
-    </div> -->
+    </div>
+     -->
+
+    <!-- Plan Start -->
+    <div style="margin-bottom: 50px;">
+      <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> আপনার সন্তানের জন্য সঠিক কেয়ার প্ল্যান</h2>
+      <p style="text-align: center; color: #64748b; margin-bottom: 30px;">প্রতিটি শিক্ষার্থীর শেখার গতি আলাদা। শিক্ষার্থীদের মেধার ভিত্তিতে ৩ ধরনের স্পেশাল কেয়ার প্ল্যান তৈরি করেছি—বেসিক কেয়ার, রেগুলার কেয়ার ও অ্যাডভান্সড গাইডলাইন।</p>
+      
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #ef4444; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1 1 300px; max-width: 360px; width: 100%;">
+          <div style="background: #fee2e2; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-heart-pulse" style="font-size: 1.5rem; color: #ef4444;"></i>
+          </div>
+          <h3 style="color: #ef4444; margin-bottom: 5px;">১. বেসিক কেয়ার (Basic Care)</h3>
+          <p style="font-size: 0.85rem; font-weight: bold; color: #dc2626; margin-bottom: 15px; background: #fef2f2; display: inline-block; padding: 3px 10px; border-radius: 20px;">🛡️ গণিতভীতি দূর করার প্রোগ্রাম</p>
+          
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
+              <i class="fa-solid fa-clock" style="color: #ef4444; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৪-৫ দিন (নিবিড় যত্ন)
+            </li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: #ef4444; margin-right: 8px;"></i>১ জন শিক্ষার্থী (1-to-1 Focus)</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-laptop-file" style="color: #ef4444; margin-right: 8px;"></i>জটিল বিষয় বোঝাতে ডিজিটাল ভিজ্যুয়াল ব্যবহার</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #ef4444; margin-right: 8px;"></i>সিলেবাস শেষ + রিভিশন প্ল্যান</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-pen-nib" style="color: #ef4444; margin-right: 8px;"></i>সৃজনশীল প্রশ্নের উত্তর করার টেকনিক</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #ef4444; margin-right: 8px;"></i>দ্রুত MCQ করার 'ম্যাজিক' শর্টকাট</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-file-invoice" style="color: #ef4444; margin-right: 8px;"></i>অভিভাবককে সাপ্তাহিক রিপোর্ট প্রদান</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-hand-holding-heart" style="color: #ef4444; margin-right: 8px;"></i>আগের ক্লাসের গ্যাপ পূরণ (Recovery)</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #ef4444; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
+          </ul>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #f59e0b; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1 1 300px; max-width: 360px; width: 100%;">
+          <div style="background: #fef3c7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: #f59e0b;"></i>
+          </div>
+          <h3 style="color: #d97706; margin-bottom: 5px;">২. রেগুলার কেয়ার (Regular)</h3>
+          <p style="font-size: 0.85rem; font-weight: bold; color: #d97706; margin-bottom: 15px; background: #fff7ed; display: inline-block; padding: 3px 10px; border-radius: 20px;">📈 ধারাবাহিক ভালো রেজাল্ট প্রোগ্রাম</p>
+          
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
+              <i class="fa-solid fa-clock" style="color: #f59e0b; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৩ দিন (রুটিন মাফিক ক্লাস)
+            </li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: #f59e0b; margin-right: 8px;"></i>১ জন শিক্ষার্থী, সম্পূর্ণ মনোযোগ</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-laptop-file" style="color: #f59e0b; margin-right: 8px;"></i>জটিল বিষয় বোঝাতে ডিজিটাল ভিজ্যুয়াল ব্যবহার</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #f59e0b; margin-right: 8px;"></i>সিলেবাস শেষ + স্পেশাল রিভিশন</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #f59e0b; margin-right: 8px;"></i>দ্রুত MCQ করার 'ম্যাজিক' শর্টকাট</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-pen-nib" style="color: #f59e0b; margin-right: 8px;"></i>সৃজনশীল প্রশ্নের মাস্টার টেকনিক</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-book-open" style="color: #f59e0b; margin-right: 8px;"></i>অধ্যায়ভিত্তিক লেকচার শিট/নোট</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-magnifying-glass-chart" style="color: #f59e0b; margin-right: 8px;"></i>নিয়মিত হোমওয়ার্ক মনিটরিং</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #d97706; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
+            
+          </ul>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #22c55e; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1 1 300px; max-width: 360px; width: 100%;">
+          <div style="background: #dcfce7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-trophy" style="font-size: 1.5rem; color: #166534;"></i>
+          </div>
+          <h3 style="color: #166534; margin-bottom: 5px;">৩. অ্যাডভান্সড গাইডলাইন</h3>
+          <p style="font-size: 0.85rem; font-weight: bold; color: #166534; margin-bottom: 15px; background: #f0fdf4; display: inline-block; padding: 3px 10px; border-radius: 20px;">🏆 বোর্ড টপার হওয়ার প্রোগ্রাম</p>
+          
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
+              <i class="fa-solid fa-clock" style="color: #22c55e; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৩ দিন (চ্যালেঞ্জিং সেশন)
+            </li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: #22c55e; margin-right: 8px;"></i>১ জন শিক্ষার্থী, পার্সোনাল মেন্টরশিপ</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #22c55e; margin-right: 8px;"></i>সিলেবাস শেষ + স্পেশাল রিভিশন</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #22c55e; margin-right: 8px;"></i>১০ সেকেন্ডে MCQ সমাধানের ট্রিকস</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-brain" style="color: #22c55e; margin-right: 8px;"></i>অলিম্পিয়াড ও ক্যাডেট প্রস্তুতি</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-file-shield" style="color: #22c55e; margin-right: 8px;"></i>বিগত বছরের বোর্ড প্রশ্ন বিশ্লেষণ</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #22c55e; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-university" style="color: #22c55e; margin-right: 8px;"></i>কলেজ ভর্তির আগাম প্রস্তুতি</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-lightbulb" style="color: #22c55e; margin-right: 8px;"></i>মেন্টাল ম্যাথ ও ব্রেইন স্টর্মিং</li>
+          </ul>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #7c3aed; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1 1 300px; max-width: 360px; width: 100%;">
+          <div style="background: #f3e8ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fa-solid fa-users-viewfinder" style="font-size: 1.5rem; color: #7c3aed;"></i>
+          </div>
+          <h3 style="color: #6d28d9; margin-bottom: 5px;">৪. ফ্রেন্ডস ব্যাচ (Group Care)</h3>
+          <p style="font-size: 0.85rem; font-weight: bold; color: #7c3aed; margin-bottom: 15px; background: #f3e8ff; display: inline-block; padding: 3px 10px; border-radius: 20px;">👥 বন্ধুদের সাথে শেখার প্রোগ্রাম</p>
+          
+          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
+            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
+              <i class="fa-solid fa-clock" style="color: #7c3aed; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৩ দিন (দলগত ক্লাস)
+            </li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user-group" style="color: #7c3aed; margin-right: 8px;"></i>৪-৬ জন বন্ধু মিলে একটি ব্যাচ</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-money-bill-wave" style="color: #7c3aed; margin-right: 8px;"></i>খরচ তুলনামূলক কম (সাশ্রয়ী)</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-award" style="color: #7c3aed; margin-right: 8px;"></i>সুস্থ প্রতিযোগিতা ও মেধা যাচাই</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #7c3aed; margin-right: 8px;"></i>সিলেবাস শেষ + স্পেশাল রিভিশন</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #7c3aed; margin-right: 8px;"></i>১০ সেকেন্ডে MCQ সমাধানের ট্রিকস</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-brain" style="color: #7c3aed; margin-right: 8px;"></i>অলিম্পিয়াড ও ক্যাডেট প্রস্তুতি</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-file-shield" style="color: #7c3aed; margin-right: 8px;"></i>বিগত বছরের বোর্ড প্রশ্ন বিশ্লেষণ</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #7c3aed; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-university" style="color: #7c3aed; margin-right: 8px;"></i>কলেজ ভর্তির আগাম প্রস্তুতি</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-lightbulb" style="color: #7c3aed; margin-right: 8px;"></i>মেন্টাল ম্যাথ ও ব্রেইন স্টর্মিং</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quiz Start-->
+    <div class="quiz-section" id="quiz-section">
+      <h2 class="section-title"><i class="fa-solid fa-clipboard-question"></i> আপনার সন্তানের গণিত দক্ষতা যাচাই (Live Test)</h2>
+      <div class="quiz-intro">
+        <p style="color:#64748b;">১৫-মিনিটের স্মার্ট মূল্যায়নে জানুন আপনার সন্তানের গণিতের বর্তমান অবস্থা এবং তার জন্য সঠিক টিউশন প্ল্যান।</p>
+      </div>
+      
+      <select id="quiz-class-selector" class="class-selector" onchange="showWarning()">
+        <option value="" disabled selected>কোন ক্লাসে পড়ে?</option>
+        <option value="class6">৬ষ্ঠ শ্রেণী</option>
+        <option value="class7">৭ম শ্রেণী</option>
+        <option value="class8">৮ম শ্রেণী</option>
+        <option value="class9">৯ম/১০ম শ্রেণী</option>
+      </select>
+
+      <div id="quiz-warning-msg" style="display:none; background: #fff7ed; border: 1px solid #fdba74; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: #c2410c;">
+        <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
+        <strong>সতর্কতা:</strong> কুইজ শুরু করার পর আপনি <strong>১৫ মিনিট</strong> সময় পাবেন।<br> 
+        সময় শেষ হলে অটোমেটিক সাবমিট হয়ে যাবে।<br><br>
+        <button onclick="confirmStartQuiz()" class="btn" style="padding: 10px 30px; background: #ea580c;">পরীক্ষা শুরু করুন</button>
+      </div>
+
+      <div id="quiz-timer-display" style="display:none; text-align: center; margin-bottom: 20px; font-weight: bold; font-size: 1.2rem; color: #ef4444; background: #fee2e2; padding: 10px; border-radius: 8px; border: 1px solid #fca5a5;">
+        <i class="fa-solid fa-stopwatch"></i> সময় বাকি: <span id="time-left">15:00</span>
+      </div>
+
+      <div id="quiz-container" class="quiz-container">
+        <form id="quiz-form" onsubmit="submitQuiz(event)">
+          <div id="quiz-questions"></div>
+          
+          <div class="quiz-btn-row">
+            <button type="submit" class="btn">সাবমিট করুন</button>
+            <button type="button" class="btn btn-cancel" onclick="cancelQuiz()">বাতিল করুন</button>
+          </div>
+        </form>
+      </div>
+      
+      <div id="quiz-result-box">
+        <div class="score-circle" id="score-display">0/0</div>
+        <div class="result-msg" id="result-msg"></div>
+        
+        <div class="ad-box" id="ad-box">
+          <div class="ad-title" id="ad-title"></div>
+          <p id="ad-desc"></p>
+        </div>
+
+        <div id="solution-offer-box" style="margin-top: 25px; padding-top: 20px; border-top: 2px dashed #cbd5e1;">
+          <p style="font-weight: bold; color: var(--secondary); margin-bottom: 15px; font-size: 1.05rem;">
+            <i class="fa-solid fa-gift" style="color: #e11d48;"></i> বিস্তারিত সমাধান বা ফ্রি পরামর্শ পেতে নাম ও নম্বর দিন:
+          </p>
+
+          <form onsubmit="submitLead(event)" id="lead-form">
+            <input type="text" id="lead-name" placeholder="আপনার নাম" required
+                   style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;">
+            
+            <input type="tel" id="lead-phone" placeholder="মোবাইল নম্বর (017...)" required
+                   style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;">
+
+            <button type="submit" class="btn" style="width: 100%; justify-content: center; background: var(--secondary);">
+              সমাধান ও পরামর্শ চাই
+            </button>
+          </form>
+        </div>
+
+        <div id="reopen-btn-area" style="display:none; margin-top: 20px;">
+          <p style="color: green; font-weight: bold; margin-bottom: 10px;">✅ আপনার রিপোর্ট তৈরি হয়েছে!</p>
+          <button onclick="openReport()" class="btn" style="background: var(--secondary); width: 100%; justify-content: center;">
+            <i class="fa-solid fa-file-invoice"></i> রিপোর্ট আবার দেখুন
+          </button>
+        </div>
+        <div style="margin-top: 20px; font-size: 0.9rem; color: #64748b;">
+          অথবা জরুরি প্রয়োজনে: <a href="tel:+8801639498196" style="color: var(--primary); font-weight: bold;">সরাসরি কল করুন</a>
+        </div>
+
+        <div id="report-modal" class="modal-overlay">
+          <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeReport()">&times;</button>
+            <div class="modal-header">
+              <i class="fa-solid fa-square-poll-vertical"></i> বিস্তারিত রিপোর্ট কার্ড
+            </div>
+            <div class="modal-body">
+              <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px dashed #e2e8f0; padding-bottom: 15px;">
+                <h3 id="pop-name" style="margin: 0; color: var(--secondary);"></h3>
+                <p id="pop-class" style="color: #64748b; font-size: 0.9rem;"></p>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-top: 10px;">
+                  স্কোর: <span id="pop-score"></span>
+                </div>
+                <p id="pop-status" style="font-weight: bold; font-size: 1rem; margin-top: 5px;"></p>
+              </div>
+
+              <h4 style="color: #ef4444; margin-bottom: 15px;">❌ ভুলগুলোর সঠিক সমাধান:</h4>
+              <div id="pop-mistakes"></div>
+
+              <div style="background: #eff6ff; padding: 20px; border-radius: 10px; border: 2px solid #bfdbfe; text-align: center; margin-top: 30px;">
+                <h4 style="color: #1e40af; margin-bottom: 5px;">পরামর্শ:</h4>
+                <p style="font-size: 0.9rem; color: #334155; margin-bottom: 15px;">
+                  বেসিক স্ট্রং করতে আমার ব্যাচে ভর্তি হয়ে দুর্বলতাগুলো কাটিয়ে উঠুন।
+                </p>
+                <a href="tel:+8801639498196" class="btn btn-call" style="width: 100%; justify-content: center;">
+                  <i class="fa-solid fa-phone"></i> ভর্তি হতে কল করুন
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--Teaching demo-->
     <div class="flip-section-wrap">
@@ -1370,13 +1594,13 @@
             <div class="flip-card-front">
               <span class="topic-badge bg-geo">পরিমিতি (Square)</span>
               <h4 class="card-q-title">বর্গক্ষেত্রের গোপন কর্ণ</h4>
-              <p class="card-q-text">কর্ণ = ১০√২</p>
+              <p class="card-q-text">কর্ণ = ১০√২ সে. মি.</p>
               <p style="font-size:0.9rem;">বর্গক্ষেত্রটির বাহুর দৈর্ঘ্য কত?</p>
               <p style="margin-top:10px; font-size:0.8rem; color:#94a3b8;">(উত্তর দেখতে টাচ করুন)</p>
             </div>
             <div class="flip-card-back">
               <div class="mini-q-ref">
-                <strong>প্রশ্ন:</strong> কর্ণ ১০√২ হলে বাহু কত?
+                <strong>প্রশ্ন:</strong> কর্ণ ১০√২  সে. মি. হলে বাহু কত?
               </div>
               <div class="sol-title">🕵️ গোপন কর্ণের রহস্য</div>
               <div class="sol-body">
@@ -1393,22 +1617,51 @@
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <span class="topic-badge bg-pati">পাটিগণিত (Percentage)</span>
-              <h4 class="card-q-title">সংখ্যা কমে যাওয়া</h4>
-              <p class="card-q-text">সংখ্যা - ৩০% = ১৪০</p>
-              <p style="font-size:0.9rem;">মূল সংখ্যাটি কত?</p>
+              <span class="topic-badge bg-pati">পাটিগণিত (Ratio)</span>
+              <h4 class="card-q-title">পায়েস বানানোর দাদুর গল্প</h4>
+              <p class="card-q-text">পায়েসে দুধ ও চিনির অনুপাত ৭: ২। ঐ পায়েসে চিনির পরিমাণ ৪ কেজি হলে...</p>
+              <p style="font-size:0.9rem;"> দুধের পরিমাণ কত?</p>
             </div>
             <div class="flip-card-back">
               <div class="mini-q-ref">
-                <strong>প্রশ্ন:</strong> ৩০% কমার পর ১৪০ হলে মূল সংখ্যা?
+                <strong>প্রশ্ন:</strong> পায়েসে দুধ ও চিনির অনুপাত ৭: ২। ঐ পায়েসে চিনির পরিমাণ ৪ কেজি হলে, দুধের পরিমাণ কত?
               </div>
-              <div class="sol-title">😢 দুঃখী সংখ্যার গল্প</div>
+              <div class="sol-title">একদিন দাদু পায়েস বানাবেন।</div>
               <div class="sol-body">
-                <p>৩০% কেটে নেওয়ায় বাকি থাকে ৭০%।<br>
-                সংখ্যাটি বলল, "আমার এই ৭০% মানেই হলো ১৪১।"<br>
-                ১% = ২, তাই ১০০% = ২০০।</p>
+                <p>একদিন দাদু পায়েস বানাবেন। দাদুর একটা নিয়ম আছে—<br>
+
+                “পায়েসে দুধ দিতে হবে ৭ কাপ, আর চিনি দিতে হবে ২ কাপ।”<br>
+                <strong>🍬 এখন ঘটনাটা হলো…</strong><br>
+
+                দাদু দেখলেন, তার কাছে চিনি আছে ঠিক ৪ কেজি।<br>
+                দাদু বললেন—<br>
+
+                “যদি ২ কাপ চিনির জায়গায় ৪ কেজি হয়,<br>
+
+                তাহলে ১ কাপ চিনি কতো কেজি?”<br>
+
+                ছোট্ট রাফি বলল—<br>
+
+                “দাদু, ৪ কেজি যদি ২ কাপ হয়,<br>
+
+                তাহলে ১ কাপ তো ২ কেজি!”<br>
+
+                দাদু বললেন— “ঠিকই ধরেছো!”<br>
+
+                🥛 এবার দুধ কয় কেজি লাগবে?<br>
+
+                দাদুর নিয়ম: দুধ = ৭ কাপ<br>
+
+                যেহেতু,১ কাপ = ২ কেজি,<br>
+
+                তাই দুধ হবে—<br>
+                ৭ কাপ × ২ কেজি = ১৪ কেজি<br>
+
+                রাফি দৌড়ে গিয়ে বলল— “দাদু! দুধ লাগবে ১৪ কেজি!” <br>
+
+                দাদু খুব খুশি হয়ে বললেন— “তা হলে আজ পায়েস খুব মজার হবে। 
               </div>
-              <div class="final-ans">🎯 উত্তর: ২০০</div>
+              <div class="final-ans">🎯 উত্তর: দুধ = ১৪ কেজি</div>
             </div>
           </div>
         </div>
@@ -1567,8 +1820,9 @@
               </div>
               <div class="sol-title">📉 ডিসকাউন্ট অফার</div>
               <div class="sol-body">
-                <p>১ম বার (১৫০০ - ৩০০) = ১২০০<br>
-                ২য় বার ১২০০ এর ১০% (১২০) কমলে,<br>
+                <p>১৫০০ এর ২০% = ১৫০০*২০/১০০ = ৩০০ টাকা কমলে্‌ 
+                ১ম বার (১৫০০ - ৩০০) টাকা= ১২০০ টাকা<br>
+                ২য় বার ১২০০ এর ১০% = ১২০০*১০/১০০ = ১২০ টাকা কমলে,<br>
                 ১২০০ - ১২০ = ১০৮০ টাকা।</p>
               </div>
               <div class="final-ans">🏷️ উত্তর: ১০৮০ টাকা</div>
@@ -1656,192 +1910,6 @@
     </div>
     <!--end-->
 
-    <!-- Quiz Start-->
-    <div class="quiz-section" id="quiz-section">
-      <h2 class="section-title"><i class="fa-solid fa-clipboard-question"></i> আপনার সন্তানের গণিত দক্ষতা যাচাই (Live Test)</h2>
-      <div class="quiz-intro">
-        <p style="color:#64748b;">১৫-মিনিটের স্মার্ট মূল্যায়নে জানুন আপনার সন্তানের গণিতের বর্তমান অবস্থা এবং তার জন্য সঠিক টিউশন প্ল্যান।</p>
-      </div>
-      
-      <select id="quiz-class-selector" class="class-selector" onchange="showWarning()">
-        <option value="" disabled selected>কোন ক্লাসে পড়ে?</option>
-        <option value="class6">৬ষ্ঠ শ্রেণী</option>
-        <option value="class7">৭ম শ্রেণী</option>
-        <option value="class8">৮ম শ্রেণী</option>
-        <option value="class9">৯ম/১০ম শ্রেণী</option>
-      </select>
-
-      <div id="quiz-warning-msg" style="display:none; background: #fff7ed; border: 1px solid #fdba74; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: #c2410c;">
-        <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
-        <strong>সতর্কতা:</strong> কুইজ শুরু করার পর আপনি <strong>১৫ মিনিট</strong> সময় পাবেন।<br> 
-        সময় শেষ হলে অটোমেটিক সাবমিট হয়ে যাবে।<br><br>
-        <button onclick="confirmStartQuiz()" class="btn" style="padding: 10px 30px; background: #ea580c;">পরীক্ষা শুরু করুন</button>
-      </div>
-
-      <div id="quiz-timer-display" style="display:none; text-align: center; margin-bottom: 20px; font-weight: bold; font-size: 1.2rem; color: #ef4444; background: #fee2e2; padding: 10px; border-radius: 8px; border: 1px solid #fca5a5;">
-        <i class="fa-solid fa-stopwatch"></i> সময় বাকি: <span id="time-left">15:00</span>
-      </div>
-
-      <div id="quiz-container" class="quiz-container">
-        <form id="quiz-form" onsubmit="submitQuiz(event)">
-          <div id="quiz-questions"></div>
-          
-          <div class="quiz-btn-row">
-            <button type="submit" class="btn">সাবমিট করুন</button>
-            <button type="button" class="btn btn-cancel" onclick="cancelQuiz()">বাতিল করুন</button>
-          </div>
-        </form>
-      </div>
-      
-      <div id="quiz-result-box">
-        <div class="score-circle" id="score-display">0/0</div>
-        <div class="result-msg" id="result-msg"></div>
-        
-        <div class="ad-box" id="ad-box">
-          <div class="ad-title" id="ad-title"></div>
-          <p id="ad-desc"></p>
-        </div>
-
-        <div id="solution-offer-box" style="margin-top: 25px; padding-top: 20px; border-top: 2px dashed #cbd5e1;">
-          <p style="font-weight: bold; color: var(--secondary); margin-bottom: 15px; font-size: 1.05rem;">
-            <i class="fa-solid fa-gift" style="color: #e11d48;"></i> বিস্তারিত সমাধান বা ফ্রি পরামর্শ পেতে নাম ও নম্বর দিন:
-          </p>
-
-          <form onsubmit="submitLead(event)" id="lead-form">
-            <input type="text" id="lead-name" placeholder="আপনার নাম" required
-                   style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;">
-            
-            <input type="tel" id="lead-phone" placeholder="মোবাইল নম্বর (017...)" required
-                   style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;">
-
-            <button type="submit" class="btn" style="width: 100%; justify-content: center; background: var(--secondary);">
-              <i class="fa-solid fa-paper-plane"></i> সমাধান ও পরামর্শ চাই
-            </button>
-          </form>
-        </div>
-
-        <div id="reopen-btn-area" style="display:none; margin-top: 20px;">
-          <p style="color: green; font-weight: bold; margin-bottom: 10px;">✅ আপনার রিপোর্ট তৈরি হয়েছে!</p>
-          <button onclick="openReport()" class="btn" style="background: var(--secondary); width: 100%; justify-content: center;">
-            <i class="fa-solid fa-file-invoice"></i> রিপোর্ট আবার দেখুন
-          </button>
-        </div>
-        <div style="margin-top: 20px; font-size: 0.9rem; color: #64748b;">
-          অথবা জরুরি প্রয়োজনে: <a href="tel:+8801639498196" style="color: var(--primary); font-weight: bold;">সরাসরি কল করুন</a>
-        </div>
-
-        <div id="report-modal" class="modal-overlay">
-          <div class="modal-content">
-            <button class="modal-close-btn" onclick="closeReport()">&times;</button>
-            <div class="modal-header">
-              <i class="fa-solid fa-square-poll-vertical"></i> বিস্তারিত রিপোর্ট কার্ড
-            </div>
-            <div class="modal-body">
-              <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px dashed #e2e8f0; padding-bottom: 15px;">
-                <h3 id="pop-name" style="margin: 0; color: var(--secondary);"></h3>
-                <p id="pop-class" style="color: #64748b; font-size: 0.9rem;"></p>
-                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-top: 10px;">
-                  স্কোর: <span id="pop-score"></span>
-                </div>
-                <p id="pop-status" style="font-weight: bold; font-size: 1rem; margin-top: 5px;"></p>
-              </div>
-
-              <h4 style="color: #ef4444; margin-bottom: 15px;">❌ ভুলগুলোর সঠিক সমাধান:</h4>
-              <div id="pop-mistakes"></div>
-
-              <div style="background: #eff6ff; padding: 20px; border-radius: 10px; border: 2px solid #bfdbfe; text-align: center; margin-top: 30px;">
-                <h4 style="color: #1e40af; margin-bottom: 5px;">পরামর্শ:</h4>
-                <p style="font-size: 0.9rem; color: #334155; margin-bottom: 15px;">
-                  বেসিক স্ট্রং করতে আমার ব্যাচে ভর্তি হয়ে দুর্বলতাগুলো কাটিয়ে উঠুন।
-                </p>
-                <a href="tel:+8801639498196" class="btn btn-call" style="width: 100%; justify-content: center;">
-                  <i class="fa-solid fa-phone"></i> ভর্তি হতে কল করুন
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Plan Start -->
-    <div style="margin-bottom: 50px;">
-      <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> আপনার সন্তানের জন্য সঠিক কেয়ার প্ল্যান</h2>
-      <p style="text-align: center; color: #64748b; margin-bottom: 30px;">প্রতিটি শিক্ষার্থীর শেখার গতি আলাদা। শিক্ষার্থীদের মেধার ভিত্তিতে ৩ ধরনের স্পেশাল কেয়ার প্ল্যান তৈরি করেছি—বেসিক কেয়ার, রেগুলার কেয়ার ও অ্যাডভান্সড গাইডলাইন।</p>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        
-        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #ef4444; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <div style="background: #fee2e2; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-            <i class="fa-solid fa-heart-pulse" style="font-size: 1.5rem; color: #ef4444;"></i>
-          </div>
-          <h3 style="color: #ef4444; margin-bottom: 5px;">১. বেসিক কেয়ার (Basic Care)</h3>
-          <p style="font-size: 0.85rem; font-weight: bold; color: #dc2626; margin-bottom: 15px; background: #fef2f2; display: inline-block; padding: 3px 10px; border-radius: 20px;">🛡️ গণিতভীতি দূর করার প্রোগ্রাম</p>
-          
-          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
-            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
-              <i class="fa-solid fa-clock" style="color: #ef4444; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৪-৫ দিন (নিবিড় যত্ন)
-            </li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: #ef4444; margin-right: 8px;"></i>১ জন শিক্ষার্থী (1-to-1 Focus)</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-laptop-file" style="color: #ef4444; margin-right: 8px;"></i>জটিল বিষয় বোঝাতে ডিজিটাল ভিজ্যুয়াল ব্যবহার</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #ef4444; margin-right: 8px;"></i>সিলেবাস শেষ + রিভিশন প্ল্যান</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-pen-nib" style="color: #ef4444; margin-right: 8px;"></i>সৃজনশীল প্রশ্নের উত্তর করার টেকনিক</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #ef4444; margin-right: 8px;"></i>দ্রুত MCQ করার 'ম্যাজিক' শর্টকাট</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-file-invoice" style="color: #ef4444; margin-right: 8px;"></i>অভিভাবককে সাপ্তাহিক রিপোর্ট প্রদান</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-hand-holding-heart" style="color: #ef4444; margin-right: 8px;"></i>আগের ক্লাসের গ্যাপ পূরণ (Recovery)</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #ef4444; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
-          </ul>
-        </div>
-
-        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #f59e0b; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-5px);">
-          <div style="background: #fef3c7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-            <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: #f59e0b;"></i>
-          </div>
-          <h3 style="color: #d97706; margin-bottom: 5px;">২. রেগুলার কেয়ার (Regular)</h3>
-          <p style="font-size: 0.85rem; font-weight: bold; color: #d97706; margin-bottom: 15px; background: #fff7ed; display: inline-block; padding: 3px 10px; border-radius: 20px;">📈 ধারাবাহিক ভালো রেজাল্ট প্রোগ্রাম</p>
-          
-          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
-            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
-              <i class="fa-solid fa-clock" style="color: #f59e0b; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৩ দিন (রুটিন মাফিক ক্লাস)
-            </li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: #f59e0b; margin-right: 8px;"></i>১ জন শিক্ষার্থী, সম্পূর্ণ মনোযোগ</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-laptop-file" style="color: #f59e0b; margin-right: 8px;"></i>জটিল বিষয় বোঝাতে ডিজিটাল ভিজ্যুয়াল ব্যবহার</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #f59e0b; margin-right: 8px;"></i>সিলেবাস শেষ + স্পেশাল রিভিশন</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #f59e0b; margin-right: 8px;"></i>দ্রুত MCQ করার 'ম্যাজিক' শর্টকাট</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-pen-nib" style="color: #f59e0b; margin-right: 8px;"></i>সৃজনশীল প্রশ্নের মাস্টার টেকনিক</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-book-open" style="color: #f59e0b; margin-right: 8px;"></i>অধ্যায়ভিত্তিক লেকচার শিট/নোট</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-magnifying-glass-chart" style="color: #f59e0b; margin-right: 8px;"></i>নিয়মিত হোমওয়ার্ক মনিটরিং</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #d97706; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
-            
-          </ul>
-        </div>
-
-        <div style="background: white; padding: 25px; border-radius: 15px; border-top: 5px solid #22c55e; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <div style="background: #dcfce7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-            <i class="fa-solid fa-trophy" style="font-size: 1.5rem; color: #166534;"></i>
-          </div>
-          <h3 style="color: #166534; margin-bottom: 5px;">৩. অ্যাডভান্সড গাইডলাইন</h3>
-          <p style="font-size: 0.85rem; font-weight: bold; color: #166534; margin-bottom: 15px; background: #f0fdf4; display: inline-block; padding: 3px 10px; border-radius: 20px;">🏆 বোর্ড টপার হওয়ার প্রোগ্রাম</p>
-          
-          <ul style="text-align: left; list-style: none; font-size: 0.9rem; color: #475569; padding: 0;">
-            <li style="margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">
-              <i class="fa-solid fa-clock" style="color: #22c55e; margin-right: 8px;"></i><strong>সময়:</strong> সপ্তাহে ৩ দিন (চ্যালেঞ্জিং সেশন)
-            </li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: #22c55e; margin-right: 8px;"></i>১ জন শিক্ষার্থী, পার্সোনাল মেন্টরশিপ</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-check-double" style="color: #22c55e; margin-right: 8px;"></i>সিলেবাস শেষ + স্পেশাল রিভিশন</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-bolt" style="color: #22c55e; margin-right: 8px;"></i>১০ সেকেন্ডে MCQ সমাধানের ট্রিকস</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-brain" style="color: #22c55e; margin-right: 8px;"></i>অলিম্পিয়াড ও ক্যাডেট প্রস্তুতি</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-file-shield" style="color: #22c55e; margin-right: 8px;"></i>বিগত বছরের বোর্ড প্রশ্ন বিশ্লেষণ</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-moon" style="color: #22c55e; margin-right: 8px;"></i>পরীক্ষার আগে স্পেশাল সাপোর্ট</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-university" style="color: #22c55e; margin-right: 8px;"></i>কলেজ ভর্তির আগাম প্রস্তুতি</li>
-            <li style="margin-bottom: 8px;"><i class="fa-solid fa-lightbulb" style="color: #22c55e; margin-right: 8px;"></i>মেন্টাল ম্যাথ ও ব্রেইন স্টর্মিং</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
     <!-- 
     <div class="services-wrap">
       <h2><i class="fa-solid fa-star"></i> এক্সক্লুসিভ ফিচার ও সুবিধাসমূহ</h2>
@@ -1860,7 +1928,7 @@
   <div class="success-story-section">
       <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> আমার কৃতী শিক্ষার্থীদের একাংশ</h2>
       <p style="text-align: center; color: #64748b; margin-bottom: 30px;">
-        শুধুমাত্র পরীক্ষালব্ধ ফলাফল নয়, গণিতের ভিত মজবুত করাই আমাদের প্রধান লক্ষ্য।
+        শুধুমাত্র পরীক্ষালব্ধ ফলাফল নয়, গণিতের ভিত মজবুত করাই আমার প্রধান লক্ষ্য।
       </p>
 
       <div class="success-carousel-wrap">
